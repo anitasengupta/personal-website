@@ -1,12 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-  border: none;
-  font-family: Arial, sans-serif;
+h1, p, a {
+	font-family: monospace;
 }
 
-body {
-  background-color: #C5FF92
-  font-size: 14px;
-  font-color: black;
+h1, p {
+	font-color: black;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+p, a {
+	font-size: 16px;
 }
