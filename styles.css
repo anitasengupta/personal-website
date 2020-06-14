@@ -1,15 +1,95 @@
-h1, p, a {
-	font-family: monospace;
+body {
+	/* add cursor trail (reference:; https://codepen.io/chrisdoble/pen/WQLLVp) */
+
+	/* background gradient */
+    background: linear-gradient(315deg, #db6930, #e5b989, #c5e9cf, #94d4e6);
+    background-size: 800% 800%;
+
+    -webkit-animation: background-gradient 90s ease infinite;
+    -moz-animation: background-gradient 90s ease infinite;
+    -o-animation: background-gradient 90s ease infinite;
+    animation: background-gradient 90s ease infinite;
 }
 
-h1, p {
-	font-color: black;
+@-webkit-keyframes background-gradient {
+    0%{background-position:58% 0%}
+    50%{background-position:43% 100%}
+    100%{background-position:58% 0%}
+}
+@-moz-keyframes background-gradient {
+    0%{background-position:58% 0%}
+    50%{background-position:43% 100%}
+    100%{background-position:58% 0%}
+}
+@-o-keyframes background-gradient {
+    0%{background-position:58% 0%}
+    50%{background-position:43% 100%}
+    100%{background-position:58% 0%}
+}
+@keyframes background-gradient {
+    0%{background-position:58% 0%}
+    50%{background-position:43% 100%}
+    100%{background-position:58% 0%}
+}
+
+/* typography */
+h1, p, a {
+	font-family: monospace;
+	color: black;
+	opacity: 85%;
 }
 
 h1 {
-  font-size: 20px;
+	font-size: 1.7em;
 }
 
 p, a {
-	font-size: 16px;
+	font-size: 1.3em;
+}
+
+a:hover,
+a:focus {
+	opacity: 100%;
+}
+
+/* traditional css positioning */
+.contact-info {
+	position: absolute;
+	top: 20%;
+	bottom: 10%;
+	left: 10%;
+	right: 10%;
+}
+
+/* css grid setup */
+.grid {
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+	grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+}
+
+/* css grid portrait positioning */
+@media all and (orientation: portrait) {
+	.contact-info {
+		position: static;
+		grid-area: 3 / 2 / 9 / 10;
+		justify-self: center;
+	}
+}
+
+@media all and (orientation: landscape) {
+	/* traditional css landscape positioning */ 
+	.contact-info {
+		position: absolute;
+		top: 30%;
+		bottom: 10%;
+		left: 20%;
+		right: 20%;
+	}
+	/* css grid landscape positioning */
+	.contact-info {
+		position: static;
+		grid-area: 4 / 3 / 8 / 9;
+	}
 }
