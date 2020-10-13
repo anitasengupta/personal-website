@@ -1,95 +1,170 @@
-body {
-	/* add cursor trail (reference:; https://codepen.io/chrisdoble/pen/WQLLVp) */
 
-	/* background gradient */
-    background: linear-gradient(315deg, #db6930, #e5b989, #c5e9cf, #94d4e6);
-    background-size: 800% 800%;
+/* positioning */
+/* review css grid positioning and come back */
+	/* name in nav */
+	#name {
+		position:  fixed;
+		top:  30px;
+		left:  30px;
+	}
 
-    -webkit-animation: background-gradient 90s ease infinite;
-    -moz-animation: background-gradient 90s ease infinite;
-    -o-animation: background-gradient 90s ease infinite;
-    animation: background-gradient 90s ease infinite;
-}
+	/* carousel in footer */
+		#carousel {
+			position:  fixed;
+			bottom: 30px;
+			left:  30px;
+		}
 
-@-webkit-keyframes background-gradient {
-    0%{background-position:58% 0%}
-    50%{background-position:43% 100%}
-    100%{background-position:58% 0%}
-}
-@-moz-keyframes background-gradient {
-    0%{background-position:58% 0%}
-    50%{background-position:43% 100%}
-    100%{background-position:58% 0%}
-}
-@-o-keyframes background-gradient {
-    0%{background-position:58% 0%}
-    50%{background-position:43% 100%}
-    100%{background-position:58% 0%}
-}
-@keyframes background-gradient {
-    0%{background-position:58% 0%}
-    50%{background-position:43% 100%}
-    100%{background-position:58% 0%}
-}
+		/* individual circles within carousel */
+		.carousel-circle {
+			height: 12px;
+			width: 12px;
+			border-radius: 50%;
+			border-color: black;
+			border: 1px;
+			display: block;
+			padding:  6px 0px 6px 0px;
+		}
+	
+	/* container for each of six sections */
+	.grid  {
+		display: grid;
+		width: 100vw;
+		height: 100vh;
+		grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+	}
+
+	/* footnote positioning */
+	.footnote {
+		position: static;
+		grid-area: 3 / 7 / 9 / 9;
+		justify-self: right
+	}
+
+	/* just the image, embedded in footnote */
+	.footnote-image
+
+	/* footnote content */
+	/* footnote for ux design list */
+	#ux-design-footnote
+
+	/* footnote for brand creation list */
+	#brand-creation-footnote {
+		display: none;
+	}
+
+	/* footnote for print graphic design list */
+	#print-graphic-design-footnote {
+		display:  none;
+	}
+
+	/* footnote for digital graphic design list */
+	#digital-graphic-design-footnote {
+		display:  none;
+	}
+
+	/* footnote for auxolar */
+	#auxolar-footnote
+
+	/* image for auxolar */
+	#auxolar-image
+
+	/* footnote for joy space */
+	#joy-space-footnote {
+		display:  none;
+	}
+
+	/* image for joy space */
+	#joy-space-image {
+		display:  none;
+	}
+
+	/* footnote for anava projects */
+	#anava-projects-footnote {
+		display: none;
+	}
+
+	/* image for anava projects */
+	#anava-projects-image {
+		display:  none;
+	}
 
 /* typography */
-h1, p, a {
-	font-family: monospace;
-	color: black;
-	opacity: 85%;
-}
 
-h1 {
-	font-size: 1.7em;
-}
-
-p, a {
-	font-size: 1.3em;
-}
-
-a:hover,
-a:focus {
-	opacity: 100%;
-}
-
-/* traditional css positioning */
-.contact-info {
-	position: absolute;
-	top: 20%;
-	bottom: 10%;
-	left: 10%;
-	right: 10%;
-}
-
-/* css grid setup */
-.grid {
-	display: grid;
-	width: 100vw;
-	height: 100vh;
-	grid-template: repeat(10, 1fr) / repeat(10, 1fr);
-}
-
-/* css grid portrait positioning */
-@media all and (orientation: portrait) {
-	.contact-info {
-		position: static;
-		grid-area: 3 / 2 / 9 / 10;
-		justify-self: center;
+	 /* large text sentences */
+	.main-content {
+		font-family: sans-serif;
+		color: black;
+		opacity: 85%;
+		font-size: 3em;
 	}
-}
 
-@media all and (orientation: landscape) {
-	/* traditional css landscape positioning */ 
-	.contact-info {
-		position: absolute;
-		top: 30%;
-		bottom: 10%;
-		left: 20%;
-		right: 20%;
+	/* superscripts in main content */
+	.main-content sup {
+		font-family: monospace;
+		color: black;
+		opacity: 85%;
+		font-size: 1em;
 	}
-	/* css grid landscape positioning */
-	.contact-info {
-		position: static;
-		grid-area: 4 / 3 / 8 / 9;
+
+	/* just the number, embedded in footnote */
+	.footnote-number {
+		font-family: monospace;
+		color: black;
+		opacity: 85%;
+		font-size: 1em;
+		/* positioning? */
+	} 
+
+	/* just the list, embedded in footnote */
+	.footnote-list {
+		font-family: monospace;
+		color: black;
+		opacity: 85%;
+		font-size: 1em;	
+		line-height: 1.5em;
+		/* positioning? */
 	}
-}
+
+	/* just the caption, embedded in footnote */
+	.footnote-caption {
+		font-family: monospace;
+		color: black;
+		opacity: 85%;
+		font-size: 1em;	
+		line-height: 1.5em;
+		/* positioning? */
+	}
+
+/* no need for styles yet, will need for javascript */
+
+	/* sections */ 
+	#intro /* first section grid */
+	#specialization /* second section grid */
+	#background /* third section grid */
+	#interests /* fourth seotion grid */
+	#work /* fifth section grid */
+	#contact /* sixth section grid */
+
+	/* footnotes links */
+	
+	/* link in main content to trigger ux detail footnote */
+	#ux-design
+
+	/* link in main content to trigger brand creation detail footnote */
+	#brand-creation
+
+	/* link in main content to trigger print graphic design detail footnote */
+	#print-graphic-design
+
+	/* link in main content to trigger digital graphic design detail footnote */
+	#digital-graphic-design
+
+	/* link in main content to trigger auxolar detail note */
+	#auxolar
+
+	/* link in main content to trigger joy space detail note */
+	#joy-space
+
+	/* link in main content to trigger anava projects detail note */
+	#anava-projects
