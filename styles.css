@@ -7,7 +7,7 @@
 		left:  30px;
 		font-family: sans-serif;
 		color: black;
-		opacity: 85%;
+		opacity: 80%;
 		font-size: 2em;
 		margin-block-start: 0em;
     	margin-block-end: 0em;
@@ -27,6 +27,7 @@
 		border-radius: 50%;
 		background-color: black;
 		border-color: black;
+		opacity:  80%;
 		border: 1px;
 		display: block;
 		margin:  10px 0px 0px 4px;
@@ -36,7 +37,7 @@
 	.carousel-caption {
 		font-family:  monospace;
 		color:  black;
-		opacity: 85%;
+		opacity: 80%;
 		font-size:  1.3em;
 		writing-mode: vertical-lr;
 		text-orientation: upright;
@@ -89,17 +90,32 @@
 			.main-content {
 				font-family: sans-serif;
 				color: black;
-				opacity: 85%;
+				opacity:  100;
 				font-size: 3em;
 				line-height: 1.3;
 				margin:  0;
 			}
 
+			.non-linked-main-content {
+				opacity:  80%;
+			}
+
+			.footnote-link {
+				cursor:  pointer;
+				opacity:  80%;
+			}
+
+			.footnote-link:hover {
+				opacity: 100%;
+			}
+
+			.active-footnote-link {
+				opacity:  100%;
+			}
+
 			/* superscripts in main content */
 			.main-content sup {
 				font-family: monospace;
-				color: black;
-				opacity: 85%;
 				font-size: .5em;
 			}
 
@@ -189,7 +205,6 @@
     		position: absolute;
     		font-family: monospace;
     		color: black;
-    		opacity: 85%;
     		font-size: 1em;
 		}
 
@@ -199,7 +214,6 @@
     		margin-left: 12px;
     		font-family: monospace;
     		color: black;
-    		opacity: 85%;
     		font-size: 1.3em;
     		line-height: 1.6em;
 		}
@@ -210,7 +224,7 @@
 
 		/* ux design footnote */
 		#ux-design-footnote {
-			/* display: none; */
+			display: none;
 		}
 
 		/* footnote for brand creation list */
@@ -242,7 +256,7 @@
 		.image-style-footnote-caption {
 			font-family: monospace;
 			color: black;
-			opacity: 85%;
+			opacity: 80%;
 			font-size: 1.3em;	
 			line-height: 1.6em;
 			margin:  0px 0px 12px 0px;
