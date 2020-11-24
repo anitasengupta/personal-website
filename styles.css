@@ -107,10 +107,18 @@
 
 			.footnote-link:hover {
 				opacity: 100%;
+				transition-duration: .2s;
+				transition-timing-function: ease-in;
 			}
 
 			.active-footnote-link {
 				opacity:  100%;
+			}
+
+			.inactive-main-content {
+				opacity:  20%;
+				transition-duration: .2s;
+				transition-timing-function: ease-out;
 			}
 
 			/* superscripts in main content */
@@ -200,6 +208,19 @@
 		    align-self: start;
 		}
 
+		.list-style-footnote {
+			opacity:  0%;
+			height:  0px;
+			overflow: hidden;
+		}
+
+		.active-footnote {
+			/* display:  block; */
+			height:  auto;
+			opacity:  100%;
+			transition: opacity .2s ease-in 0s;
+		}
+
 		.list-style-footnote-number {
 			display: inline-block;
     		position: absolute;
@@ -223,25 +244,16 @@
 		}
 
 		/* ux design footnote */
-		#ux-design-footnote {
-			display: none;
-		}
+		#ux-design-footnote
 
 		/* footnote for brand creation list */
-		#brand-creation-footnote {
-			display: none;
-		}
+		#brand-creation-footnote
 
 		/* footnote for print graphic design list */
-		#print-graphic-design-footnote {
-			display:  none;
-		}
+		#print-graphic-design-footnote
 
 		/* footnote for digital graphic design list */
-		#digital-graphic-design-footnote {
-			display:  none;
-
-		}
+		#digital-graphic-design-footnote
 
 		/* image style footnotes */
 		.work-overlay {
