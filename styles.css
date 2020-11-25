@@ -228,29 +228,14 @@
     		font-size: 1em;
 		}
 
-		.test-list-style-footnote-list {
+		.footnote-list {
 			display: inline-block;
     		position: absolute;
-    		margin-left: 12px;
+    		margin-left: 14px;
     		font-family: monospace;
     		color: black;
     		font-size: 1.3em;
     		line-height: 2.4em;
-
-		}
-
-		/* .list-style-footnote-list {
-	  		display: inline-block;
-    		position: absolute;
-    		margin-left: 12px;
-    		font-family: monospace;
-    		color: black;
-    		font-size: 1.3em;
-    		line-height: 1.6em;
-		} */
-
-		.footnote-list-item {
-			margin:  8px;
 		}
 
 		/* ux design footnote */
