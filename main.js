@@ -1,4 +1,8 @@
 // variables
+
+  // grid
+  // const specializationGrid = document.getElementById('specialization');
+
   // specialization main content
   const specializationNonLinkedContent1 = document.getElementById('specialization-non-linked-content-1');
   const specializationNonLinkedContent2 = document.getElementById('specialization-non-linked-content-2');
@@ -10,7 +14,6 @@
   const digitalGraphicDesignMainContent = document.getElementById('digital-graphic-design');
 
   // specialization footnotes
-  // const specializationOverlay = document.querySelector('specialization-overlay');
   const uxDesignFootnote = document.getElementById('ux-design-footnote');
 
   // other
@@ -19,7 +22,7 @@
 // functions
 function showUxDesignFootnote() {
   uxDesignFootnote.classList.add('active-footnote');
-  uxDesignMainContent.classList.add('active-footnote-link');
+  uxDesignMainContent.classList.add('active-footnote-link')
   specializationNonLinkedContent1.classList.add('inactive-main-content');
   specializationNonLinkedContent2.classList.add('inactive-main-content');
   specializationNonLinkedContent3.classList.add('inactive-main-content');
@@ -52,12 +55,13 @@ function hideUxDesignFootnote() {
 
 //event listeners
 uxDesignMainContent.onclick = showUxDesignFootnote;
-name.onclick = hideUxDesignFootnote;
+// specializationGrid.onclick = hideUxDesignFootnote;
+// name.onclick = hideUxDesignFootnote;
 
 //scratch
-/* window.addEventListener('mouseup', function(event){
-  if (event.target != uxDesignFootnote && event.target.parentNode != uxDesignFootnote) {
-    uxDesignFootnote.style.transition = 'opacity 2s ease-out 0s';
+window.addEventListener('mouseup', function(event){
+  if(event.target != /*name*/ uxDesignFootnote && event.target.parentNode != uxDesignFootnote) {
+    uxDesignFootnote.style.transition = 'opacity .2s ease-out 0s';
     uxDesignFootnote.classList.remove('active-footnote');
     uxDesignMainContent.style.transition = 'opacity .2s ease-out 0s';
     uxDesignMainContent.classList.remove('active-footnote-link');
@@ -76,6 +80,4 @@ name.onclick = hideUxDesignFootnote;
     digitalGraphicDesignMainContent.style.transition = 'opacity .2s ease-in 0s';
     digitalGraphicDesignMainContent.classList.remove('inactive-main-content');
   }
-}); */
-
-// && event.target.parentNode != specializationOverlay
+})

@@ -228,7 +228,18 @@
     		font-size: 1em;
 		}
 
-		.list-style-footnote-list {
+		.test-list-style-footnote-list {
+			display: inline-block;
+    		position: absolute;
+    		margin-left: 12px;
+    		font-family: monospace;
+    		color: black;
+    		font-size: 1.3em;
+    		line-height: 2.4em;
+
+		}
+
+		/* .list-style-footnote-list {
 	  		display: inline-block;
     		position: absolute;
     		margin-left: 12px;
@@ -236,7 +247,7 @@
     		color: black;
     		font-size: 1.3em;
     		line-height: 1.6em;
-		}
+		} */
 
 		.footnote-list-item {
 			margin:  8px;
