@@ -197,6 +197,7 @@
 			grid-column-end:  span 7;
 		}
 
+		/* footnotes */
 		.specialization-overlay {
 			grid-row-start: 2;
 		    grid-row-end: 5;
@@ -210,12 +211,6 @@
 			opacity:  0%;
 			height:  0px;
 			overflow: hidden;
-		}
-
-		.active-footnote {
-			height:  auto;
-			opacity:  100%;
-			transition: opacity .2s ease-in 0s;
 		}
 
 		.list-style-footnote-number {
@@ -243,41 +238,42 @@
     		grid-column-start: 5;
     		grid-column-end: 10;
     		align-self: start;
-    		justify-self: end;
+    		justify-self: start;
+		}
+
+		.image-style-footnote {
+			position: absolute;
+			opacity:  0%;
+			height:  0px;
+			overflow: hidden;
 		}
 
 		.image-style-footnote-caption {
 			font-family: monospace;
 			color: black;
-			opacity: 80%;
 			font-size: 1.3em;	
 			line-height: 1.6em;
 			margin:  0px 0px 12px 0px;
 		}
 
 		.image-style-footnote-image {
-			display: block;
-			max-width: 100%;
-			height: auto;
+			width: 100%;
+		}
+
+		.active-footnote {
+			height:  auto;
+			opacity:  100%;
+			transition: opacity .2s ease-in 0s;
 		}
 
 		/* footnote for auxolar */
-		#auxolar-footnote {
-			display: none;
-			z-index:  2;
-		}
+		#auxolar-footnote
 
 		/* footnote for joy space */
-		#joy-space-footnote {
-			/* display:  none; */
-			z-index:  2;
-		}
+		#joy-space-footnote
 
 		/* footnote for anava projects */
-		#anava-projects-footnote {
-			display: none;
-			z-index:  2;
-		}
+		#anava-projects-footnote
 
 /* no need for styles yet, will need for javascript */
 
