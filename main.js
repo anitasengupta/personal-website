@@ -16,8 +16,18 @@
   const printGraphicDesignFootnote = document.getElementById('print-graphic-design-footnote');
   const digitalGraphicDesignFootnote = document.getElementById('digital-graphic-design-footnote');
 
-  // other
-  const name = document.getElementById('name');
+  // work main content
+  const workNonLinkedContent1 = document.getElementById('work-non-linked-content-1');
+  const workNonLinkedContent2 = document.getElementById('work-non-linked-content-2');
+  const workNonLinkedContent3 = document.getElementById('work-non-linked-content-3');
+  const auxolarMainContent = document.getElementById('auxolar');
+  const joySpaceMainContent = document.getElementById('joy-space');
+  const anavaProjectsMainContent = document.getElementById('anava-projects');
+
+  // work footnotes
+  const auxolarFootnote = document.getElementById('auxolar-footnote');
+  const joySpaceFootnote = document.getElementById('joy-space-footnote');
+  const anavaProjectsFootnote = document.getElementById('anava-projects-footnote');
 
 // functions
   
@@ -126,8 +136,8 @@
   }
 
   // close all footnotes
-  function hideSpecializationFootnotes() {
-    if(event.target != uxDesignFootnote && event.target.parentNode != uxDesignFootnote && event.target != brandCreationFootnote && event.target.parentNode != brandCreationFootnote && event.target != printGraphicDesignFootnote && event.target.parentNode != printGraphicDesignFootnote && event.target != digitalGraphicDesignFootnote && event.target.parentNode != digitalGraphicDesignFootnote) {
+  function hideFootnotes() {
+    if(event.target != uxDesignFootnote && event.target.parentNode != uxDesignFootnote && event.target != brandCreationFootnote && event.target.parentNode != brandCreationFootnote && event.target != printGraphicDesignFootnote && event.target.parentNode != printGraphicDesignFootnote && event.target != digitalGraphicDesignFootnote && event.target.parentNode != digitalGraphicDesignFootnote && event.target != auxolarFootnote && event.target.parentNode != auxolarFootnote && event.target != joySpaceFootnote && event.target.parentNode != joySpaceFootnote && event.target != anavaProjectsFootnote && event.target.parentNode != anavaProjectsFootnote) {
       // hide footnotes
       uxDesignFootnote.style.transition = 'opacity .2s ease-out 0s';
       uxDesignFootnote.classList.remove('active-footnote');
@@ -137,6 +147,8 @@
       printGraphicDesignFootnote.classList.remove('active-footnote');
       digitalGraphicDesignFootnote.style.transition = 'opacity .2s ease-out 0s';
       digitalGraphicDesignFootnote.classList.remove('active-footnote');
+      joySpaceFootnote.style.transition = 'opacity .2s ease-out 0s';
+      joySpaceFootnote.classList.remove('active-footnote');
 
       // remove active styling on main content links
       uxDesignMainContent.style.transition = 'opacity .2s ease-out 0s';
@@ -147,6 +159,12 @@
       printGraphicDesignMainContent.classList.remove('active-footnote-link');
       digitalGraphicDesignMainContent.style.transition = 'opacity .2s ease-out 0s';
       digitalGraphicDesignMainContent.classList.remove('active-footnote-link');
+      auxolarMainContent.style.transition = 'opacity .2s ease-out 0s';
+      auxolarMainContent.classList.remove('active-footnote-link');
+      joySpaceMainContent.style.transition = 'opacity .2s ease-out 0s';
+      joySpaceMainContent.classList.remove('active-footnote-link');
+      anavaProjectsMainContent.style.transition = 'opacity .2s ease-out 0s';
+      anavaProjectsMainContent.classList.remove('active-footnote-link');
 
       // remove inactive styling on all main content
       specializationNonLinkedContent1.style.transition = 'opacity .2s ease-in 0s';
@@ -165,7 +183,41 @@
       printGraphicDesignMainContent.classList.remove('inactive-main-content');
       digitalGraphicDesignMainContent.style.transition = 'opacity .2s ease-in 0s';
       digitalGraphicDesignMainContent.classList.remove('inactive-main-content');
+      workNonLinkedContent1.style.transition = 'opacity .2s ease-in 0s';
+      workNonLinkedContent1.classList.remove('inactive-main-content');
+      workNonLinkedContent2.style.transition = 'opacity .2s ease-in 0s';
+      workNonLinkedContent2.classList.remove('inactive-main-content');
+      workNonLinkedContent3.style.transition = 'opacity .2s ease-in 0s';
+      workNonLinkedContent3.classList.remove('inactive-main-content');
+      auxolarMainContent.style.transition = 'opacity .2s ease-in 0s';
+      auxolarMainContent.classList.remove('inactive-main-content');
+      joySpaceMainContent.style.transition = 'opacity .2s ease-in 0s';
+      joySpaceMainContent.classList.remove('inactive-main-content');
+      anavaProjectsMainContent.style.transition = 'opacity .2s ease-in 0s';
+      anavaProjectsMainContent.classList.remove('inactive-main-content');
     }
+  }
+
+  // open joy space footnote
+  function showJoySpaceFootnote() {
+    // hide any already visible footnotes
+    auxolarFootnote.style.transition = 'opacity .2s ease-out 0s';
+    auxolarFootnote.classList.remove('active-footnote');
+    anavaProjectsFootnote.style.transition = 'opacity .2s ease-out 0s';
+    anavaProjectsFootnote.classList.remove('active-footnote');
+
+    // show relevant footnote
+    joySpaceFootnote.classList.add('active-footnote');
+
+    // give main content link active styles
+    joySpaceMainContent.classList.add('active-footnote-link')
+
+    // give other main content inactive styles
+    workNonLinkedContent1.classList.add('inactive-main-content');
+    workNonLinkedContent2.classList.add('inactive-main-content');
+    workNonLinkedContent3.classList.add('inactive-main-content');
+    auxolarMainContent.classList.add('inactive-main-content');
+    anavaProjectsMainContent.classList.add('inactive-main-content');
   }
 
 //event listeners
@@ -182,6 +234,9 @@
   // open digital graphic design footnote
   digitalGraphicDesignMainContent.onclick = showDigitalGraphicDesignFootnote;
 
-  // close all footnotes
-  window.onmouseup = hideSpecializationFootnotes;
+  //open joy space footnote
+  joySpaceMainContent.onclick = showJoySpaceFootnote;
+
+  // close all specialization footnotes
+  window.onmouseup = hideFootnotes;
 
