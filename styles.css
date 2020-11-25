@@ -197,8 +197,6 @@
 			grid-column-end:  span 7;
 		}
 
-	/* footnote positioning */
-		/* list style footnotes */
 		.specialization-overlay {
 			grid-row-start: 2;
 		    grid-row-end: 5;
@@ -237,18 +235,6 @@
     		font-size: 1.3em;
     		line-height: 2.4em;
 		}
-
-		/* ux design footnote */
-		#ux-design-footnote
-
-		/* footnote for brand creation list */
-		#brand-creation-footnote
-
-		/* footnote for print graphic design list */
-		#print-graphic-design-footnote
-
-		/* footnote for digital graphic design list */
-		#digital-graphic-design-footnote
 
 		/* image style footnotes */
 		.work-overlay {
@@ -302,17 +288,3 @@
 	#interests /* fourth seotion grid */
 	#work /* fifth section grid */
 	#contact /* sixth section grid */
-
-	/* footnotes links */
-	
-	/* link in main content to trigger ux detail footnote */
-	#ux-design
-
-	/* link in main content to trigger brand creation detail footnote */
-	#brand-creation
-
-	/* link in main content to trigger print graphic design detail footnote */
-	#print-graphic-design
-
-	/* link in main content to trigger digital graphic design detail footnote */
-	#digital-graphic-design
