@@ -11,6 +11,7 @@
 		font-size: 2em;
 		margin-block-start: 0em;
     	margin-block-end: 0em;
+    	z-index: 4;
 	}
 
 	/* carousel in footer */
@@ -18,6 +19,7 @@
 		position:  fixed;
 		bottom: 30px;
 		right:  30px;
+		z-index: 4;
 	}
 
 	/* individual circles within carousel */
@@ -94,6 +96,7 @@
 				font-size: 3em;
 				line-height: 1.3;
 				margin:  0;
+				/* z-index: 3; */
 			}
 
 			.non-linked-main-content {
@@ -103,22 +106,28 @@
 			.footnote-link {
 				cursor:  pointer;
 				opacity:  80%;
+				/* z-index: 3; */
 			}
 
 			.footnote-link:hover {
 				opacity: 100%;
 				transition-duration: .2s;
 				transition-timing-function: ease-in;
+				position: relative;
+				z-index: 3;
 			}
 
 			.active-footnote-link {
 				opacity:  100%;
+				position: relative;
+				z-index:  3;
 			}
 
 			.inactive-main-content {
 				opacity:  20%;
 				transition-duration: .2s;
 				transition-timing-function: ease-out;
+				z-index: 1;
 			}
 
 			/* superscripts in main content */
@@ -170,22 +179,18 @@
 			grid-column-start: 2;
 			grid-column-end:  span 7;
 			align-self:  end;
-			z-index: 1;
 		}
 
 			/* link in main content to trigger auxolar detail note */
 			#auxolar {
-				z-index:  3;
 			}
 
 			/* link in main content to trigger joy space detail note */
 			#joy-space {
-				z-index:  3;
 			}
 
 			/* link in main content to trigger anava projects detail note */
 			#anava-projects {
-				z-index:  3;
 			}
 
 		/* contact */
@@ -198,7 +203,7 @@
 		}
 
 		/* footnotes */
-		.specialization-overlay {
+		.list-overlay {
 			grid-row-start: 2;
 		    grid-row-end: 5;
 		    grid-column-start: 8;
@@ -232,7 +237,7 @@
 		}
 
 		/* image style footnotes */
-		.work-overlay {
+		.image-overlay {
 			grid-row-start: 2;
     		grid-row-end: 7;
     		grid-column-start: 5;
@@ -254,16 +259,25 @@
 			font-size: 1.3em;	
 			line-height: 1.6em;
 			margin:  0px 0px 12px 0px;
+			width: 85%;
 		}
 
 		.image-style-footnote-image {
-			width: 100%;
+			width: 85%;
 		}
 
 		.active-footnote {
 			height:  auto;
 			opacity:  100%;
 			transition: opacity .2s ease-in 0s;
+			z-index: 2;
+		}
+
+		.active-image-footnote {
+			height:  auto;
+			opacity:  100%;
+			transition: opacity .4s ease-in 0s;
+			z-index: 2;
 		}
 
 		/* footnote for auxolar */
