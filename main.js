@@ -29,6 +29,31 @@
   const joySpaceFootnote = document.getElementById('joy-space-footnote');
   const anavaProjectsFootnote = document.getElementById('anava-projects-footnote');
 
+  // carousel captions
+  /* const introCaption = document.getElementById('intro-caption');
+  const specializationCaption = document.getElementById('specialization-caption');
+  const backgroundCaption = document.getElementById('background-caption');
+  const interestsCaption = document.getElementById('interests-caption');
+  const workCaption = document.getElementById('work-caption');
+  const contactCaption = document.getElementById('contact-caption');
+  // const changingCaption = document.getElementById('changing-caption');
+
+  // carousel circle wrapper
+  const introCircleWrapper = document.getElementById('intro-circle-wrapper');
+  const specializationCircleWrapper = document.getElementById('specialization-circle-wrapper');
+  const backgroundCircleWrapper = document.getElementById('background-circle-wrapper');
+  const interestsCircleWrapper = document.getElementById('interests-circle-wrapper');
+  const workCircleWrapper = document.getElementById('work-circle-wrapper');
+  const contactCircleWrapper = document.getElementById('contact-circle-wrapper');
+
+  // carousel circles
+  const introCircle = document.getElementById('intro-circle');
+  const specializationCircle = document.getElementById('specialization-circle');
+  const backgroundCircle = document.getElementById('background-circle');
+  const interestsCircle = document.getElementById('interests-circle');
+  const workCircle = document.getElementById('work-circle');
+  const contactCircle = document.getElementById('contact-circle'); */
+
 // functions
   
   // open ux footnote
@@ -192,6 +217,7 @@
     anavaProjectsFootnote.style.transition = 'opacity .4s ease-in 0s';
     anavaProjectsFootnote.classList.add('active-image-footnote');
 
+
     // give main content link active styles
     anavaProjectsMainContent.classList.add('active-footnote-link')
 
@@ -202,6 +228,30 @@
     auxolarMainContent.classList.add('inactive-main-content');
     joySpaceMainContent.classList.add('inactive-main-content');
   }
+
+    // show intro hover styles on carousel
+    function showIntroCaption() {
+      // hide already visible captions
+      specializationCaption.classList.remove('active-carousel-caption');
+      backgroundCaption.classList.remove('active-carousel-caption');
+      interestsCaption.classList.remove('active-carousel-caption');
+      workCaption.classList.remove('active-carousel-caption');
+      contactCaption.classList.remove('active-carousel-caption');
+
+      // show relevant caption
+      introCaption.classList.add('active-carousel-caption');
+
+      // show circle hover styles
+      introCircle.classList.add('hover-carousel-circle');
+    }
+
+    // hide intro hover styles on carousel
+    function hideIntroCaption() {
+      introCaption.classList.remove('active-carousel-caption');
+
+      // remove circle hover styles
+      introCircle.classList.remove('hover-carousel-circle');
+    }
 
   // close all footnotes
   function hideFootnotes() {
@@ -224,6 +274,7 @@
       auxolarFootnote.style.transition = 'opacity .2s ease-out 0s';
       auxolarFootnote.classList.remove('active-footnote');
       joySpaceFootnote.style.transition = 'opacity .4s ease-out 0s';
+      // joySpaceFootnote.style.opacity = '0';
       joySpaceFootnote.classList.remove('active-image-footnote');
       anavaProjectsFootnote.style.transition = 'opacity .4s ease-out 0s';
       anavaProjectsFootnote.classList.remove('active-image-footnote');
@@ -301,4 +352,46 @@
 
   // close all specialization footnotes
   window.onmouseup = hideFootnotes;
+
+  // show intro caption
+  introCircleWrapper.onmouseover = showIntroCaption;
+  introCircleWrapper.onmouseout = hideIntroCaption;
+
+
+//scratch
+
+/* function displayIntroCaption() {
+  changingCaption.style.transition = 'opacity .2s ease-out 0s'
+  changingCaption.style.opacity = '0%';
+  changingCaption.innerHTML = 'INTRO';
+  changingCaption.style.transition = 'opacity 1s ease-in 0s'
+  changingCaption.style.opacity = '100s';
+
+}
+
+function displaySpecializationCaption() {
+  changingCaption.innerHTML = "SPECIALIZATION";
+}
+
+introCircleWrapper.onmouseover = displayIntroCaption;
+specializationCircleWrapper.onmouseover = displaySpecializationCaption;
+
+
+/* const changingCaption = document.getElementById('changing-caption');
+
+function introCaption {
+  changingCaption.innerHTML = "INTRO";
+}
+
+
+introCircleWrapper.onmouseover = introCaption; */
+
+
+
+
+
+
+
+
+
 

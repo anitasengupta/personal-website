@@ -1,4 +1,8 @@
 /* small desktop */
+/* scroll behavior */
+html {
+	scroll-behavior: smooth;
+}
 /* fixed elements */
 	/* name in nav */
 	#name {
@@ -7,7 +11,7 @@
 		left:  30px;
 		font-family: sans-serif;
 		color: black;
-		opacity: 80%;
+		opacity: .8;
 		font-size: 2em;
 		margin-block-start: 0em;
     	margin-block-end: 0em;
@@ -22,58 +26,94 @@
 		z-index: 4;
 	}
 
+	/* over area around carousel circles */
+	.carousel-hover-area {
+		height:  20px;
+		width: 20px;
+		display:  block;
+		cursor: pointer;
+	}
+
+	#intro-circle-wrapper {
+		margin:  20px 0px 0px 0px;
+	}
+
 	/* individual circles within carousel */
 	.carousel-circle {
-		height: 12px;
-		width: 12px;
+		height: 14px;
+		width: 14px;
 		border-radius: 50%;
 		background-color: black;
 		border-color: black;
-		opacity:  80%;
+		opacity:  .2;
 		border: 1px;
-		display: block;
-		margin:  10px 0px 0px 4px;
+		margin:  6px 0px 0px 2px;
+		cursor: pointer;
+	}
+
+	.hover-carousel-circle {
+		opacity: 1;
+		transition-duration: .2s;
+		transition-timing-function: ease-in;
+		cursor:  pointer;
+	}
+
+	.active-carousel-circle {
+		opacity: 1;
+		transition-duration: .2s;
+		transition-timing-function: ease-in;
+		cursor:  pointer;
 	}
 
 	/* carousel caption */
+
 	.carousel-caption {
 		font-family:  monospace;
 		color:  black;
-		opacity: 80%;
 		font-size:  1.3em;
 		writing-mode: vertical-lr;
 		text-orientation: upright;
-		margin:  0px 0px 20px 0px;
+		margin:  0px 0px 0px 0px;
 		text-align: right;
+		opacity:  0;
+		height:  0px;
+		position:  absolute;
+	}
+
+	.active-carousel-caption {
+		opacity: .8;
+		transition-duration:  .2s;
+		transition-timing-function: ease-in;
+		height:  auto;
 	}
 
 	/*intro carousel caption */
-	#intro-carousel-caption {
+	#intro-caption {
 
 	}
 
 	/*specialization carousel caption */
-	#specialization-carousel-caption {
+	#specialization-caption {
 		display: none;
 	}
 
 	/*background carousel caption */
-	#background-carousel-caption {
+	#background-caption {
 		display: none;
 	}
 
 	/*interests carousel caption */
-	#interests-carousel-caption {
-		display:  none;
+	#interests-caption {
+		display: none;
 	}
 
 	/*work carousel caption */
-	#work-carousel-caption {
-		display:  none;
+	#work-caption {
+		display: none;
 	}
 
 	/*contact carousel caption */
-	#contact-carousel-caption {
+	#contact-caption {
 		display: none;
 	}
 
@@ -96,21 +136,19 @@
 				font-size: 3em;
 				line-height: 1.3;
 				margin:  0;
-				/* z-index: 3; */
 			}
 
 			.non-linked-main-content {
-				opacity:  80%;
+				opacity:  .8;
 			}
 
 			.footnote-link {
 				cursor:  pointer;
-				opacity:  80%;
-				/* z-index: 3; */
+				opacity:  .8;
 			}
 
 			.footnote-link:hover {
-				opacity: 100%;
+				opacity: 1;
 				transition-duration: .2s;
 				transition-timing-function: ease-in;
 				position: relative;
@@ -118,13 +156,13 @@
 			}
 
 			.active-footnote-link {
-				opacity:  100%;
+				opacity:  1;
 				position: relative;
 				z-index:  3;
 			}
 
 			.inactive-main-content {
-				opacity:  20%;
+				opacity:  .2;
 				transition-duration: .2s;
 				transition-timing-function: ease-out;
 				z-index: 1;
@@ -181,18 +219,6 @@
 			align-self:  end;
 		}
 
-			/* link in main content to trigger auxolar detail note */
-			#auxolar {
-			}
-
-			/* link in main content to trigger joy space detail note */
-			#joy-space {
-			}
-
-			/* link in main content to trigger anava projects detail note */
-			#anava-projects {
-			}
-
 		/* contact */
 		#contact-main-content {
 			grid-row-start:  4;
@@ -213,7 +239,7 @@
 		}
 
 		.list-style-footnote {
-			opacity:  0%;
+			opacity:  0;
 			height:  0px;
 			overflow: hidden;
 		}
@@ -247,10 +273,10 @@
 		}
 
 		.image-style-footnote {
-			position: absolute;
-			opacity:  0%;
+			opacity:  0;
 			height:  0px;
 			overflow: hidden;
+			position: absolute;
 		}
 
 		.image-style-footnote-caption {
@@ -268,33 +294,16 @@
 
 		.active-footnote {
 			height:  auto;
-			opacity:  100%;
+			opacity:  1;
 			transition: opacity .2s ease-in 0s;
 			z-index: 2;
 		}
 
 		.active-image-footnote {
+			display:  block;
 			height:  auto;
-			opacity:  100%;
+			/* height: 500px; - javascript height transitions worked with fixed value */
+			opacity:  1;
 			transition: opacity .4s ease-in 0s;
 			z-index: 2;
 		}
-
-		/* footnote for auxolar */
-		#auxolar-footnote
-
-		/* footnote for joy space */
-		#joy-space-footnote
-
-		/* footnote for anava projects */
-		#anava-projects-footnote
-
-/* no need for styles yet, will need for javascript */
-
-	/* sections */ 
-	#intro /* first section grid */
-	#specialization /* second section grid */
-	#background /* third section grid */
-	#interests /* fourth seotion grid */
-	#work /* fifth section grid */
-	#contact /* sixth section grid */

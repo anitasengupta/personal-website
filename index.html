@@ -25,10 +25,10 @@
 	</head>	
 	<body>
 		<!-- make canvas for background texture -->
-		<div class="grid" id="intro">
+		<section class="grid" id="intro">
 			<p class="main-content" id="intro-main-content">I’m a graphic & user experience designer based in Berlin (& sometimes New York).</p>
-		</div>
-		<div class="grid" id="specialization">
+		</section>
+		<section class="grid" id="specialization">
 			<p class="main-content" id="specialization-main-content">
 				<span class="non-linked-main-content" id="specialization-non-linked-content-1">I specialize in </span>
 				<span class="footnote-link" id="ux-design">user experience design,<sup>1</sup></span>
@@ -62,14 +62,14 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="grid" id="background">
+		</section>
+		<section class="grid" id="background">
 			<p class="main-content" id="background-main-content">I have a background in Economics & I approach design with a left brain/right brain balance of critical thinking & creativity.</p>
-		</div>
-		<div class="grid" id="interests">
+		</section>
+		<section class="grid" id="interests">
 			<p class="main-content" id="interests-main-content">I'm interested in ethical design, feminizing systems, co-creation & centering play in the creation process.</p>
-		</div>
-		<div class="grid" id="work">
+		</section>
+		<section class="grid" id="work">
 			<p class="main-content" id="work-main-content">
 				<span class="non-linked-main-content" id="work-non-linked-content-1">Recent projects include </span>
 				<span class="footnote-link" id="auxolar">a solar panel dashboard app<sup>5</sup></span>
@@ -104,24 +104,49 @@
 					</a>
 				</div>
 			</div>
-		</div>
-		<div class="grid" id="contact">
+		</section>
+		<section class="grid" id="contact">
 			<p class="main-content" id="contact-main-content">For enquiries & work samples, email me at <a href="mailto:anita.m.sengupta@gmail.com">anita.m.sengupta@gmail.com</a>.<br>Or just lurk on me <a href=https://www.instagram.com/_thelaundromat/ target="_blank">@_thelaundromat</a>.</p>
-		</div>
+		</section>
 		<p id="name">Anita<br>Sengupta</p>
 		<div id="carousel">
-			<p class="carousel-caption" id="intro-carousel-caption">INTRO</p>
-			<p class="carousel-caption" id="specialization-carousel-caption">SPECIALIZATION</p>
-			<p class="carousel-caption" id="background-carousel-caption">BACKGROUND</p>
-			<p class="carousel-caption" id="interests-carousel-caption">INTERESTS</p>
-			<p class="carousel-caption" id="work-carousel-caption">WORK</p>
-			<p class="carousel-caption" id="contact-carousel-caption">CONTACT</p>
-			<div class="carousel-circle"></div>
-			<div class="carousel-circle"></div>
-			<div class="carousel-circle"></div>
-			<div class="carousel-circle"></div>
-			<div class="carousel-circle"></div>
-			<div class="carousel-circle"></div>
+			<!-- <p class="carousel-caption" id="changing-caption">TEST</p> -->
+			<p class="carousel-caption" id="intro-caption">INTRO</p>
+			<p class="carousel-caption" id="specialization-caption">SPECIALIZATION</p>
+			<p class="carousel-caption" id="background-caption">BACKGROUND</p>
+			<p class="carousel-caption" id="interests-caption">INTERESTS</p>
+			<p class="carousel-caption" id="work-caption">WORK</p>
+			<p class="carousel-caption" id="contact-caption">CONTACT</p>
+			<div class="carousel-hover-area" id="intro-circle-wrapper">
+				<a href=#intro>
+					<div class="carousel-circle" id="intro-circle"></div>
+				</a>
+			</div>
+			<div class="carousel-hover-area" id="specialization-circle-wrapper">
+				<a href=#specialization>
+					<div class="carousel-circle" id="specialization-circle"></div>
+				</a>
+			</div>
+			<div class="carousel-hover-area" id="background-circle-wrapper">
+				<a href=#background>
+					<div class="carousel-circle" id="background-circle"></div>
+				</a>
+			</div>
+			<div class="carousel-hover-area" id="interests-circle-wrapper">
+				<a href=#interests>
+					<div class="carousel-circle" id="interests-circle"></div>
+				</a>
+			</div>
+			<div class="carousel-hover-area" id="work-circle-wrapper">
+				<a href=#work>
+					<div class="carousel-circle"mid="work-circle"></div>
+				</a>
+			</div>
+			<div class="carousel-hover-area" id="contact-circle-wrapper">
+				<a href=#contact>
+					<div class="carousel-circle" id="contact-circle"></div>
+				</a>
+			</div>
 		</div>
 	</body>
 </html>
