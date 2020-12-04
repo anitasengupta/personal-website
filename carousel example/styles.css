@@ -1,0 +1,91 @@
+html {
+	scroll-behavior: smooth;
+}
+
+section {
+	flex-basis:  100%;
+	display:  flex;
+	justify-content: center;
+	align-items: center;
+	width:  100vw;
+	height: 100vh;
+	border: solid 2px;
+	border-color: black;
+}
+
+/*.circles {
+	position:  fixed;
+	bottom:  30px;
+	right: 30px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.circles a div {
+	height: 14px;
+	width: 14px;
+	border-radius: 50%;
+	background-color: black;
+	border-color: black;
+	opacity:  .2;
+	border: 1px;
+	margin:  14px 0px 0px 0px;
+	cursor: pointer;
+}
+
+.circles a div.selected {
+	opacity: 1;
+	transition-duration: .2s;
+	transition-timing-function: ease-in;
+} */
+
+.caption p {
+	font-family:  monospace;
+	color:  black;
+	font-size:  1.3em;
+	writing-mode: vertical-lr;
+	text-orientation: upright;
+	margin:  0px 0px 0px 0px;
+	text-align: right;
+	opacity:  0;
+	height:  0px;
+	position:  fixed;
+	bottom:  196px;
+	right:  27px;
+	/* display: none; */
+}
+
+.caption p.selected-caption {
+	/* display:  block; */
+	opacity:  1;
+	height:  auto;
+	transition: opacity .2s ease-in 0s;
+}
+
+.control ul {
+	position:  fixed;
+	bottom:  30px;
+	right: 30px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.control ul li {
+	height: 14px;
+	width: 14px;
+	border-radius: 50%;
+	background-color: black;
+	border-color: black;
+	opacity:  .2;
+	border: 1px;
+	margin:  14px 0px 0px 0px;
+	cursor: pointer;
+}
+
+.control ul li.selected {
+	opacity: 1;
+	transition-duration: .2s;
+	transition-timing-function: ease-in;
+}
