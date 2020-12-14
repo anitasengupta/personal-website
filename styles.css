@@ -18,56 +18,9 @@ html {
     	z-index: 4;
 	}
 
-	/* carousel in footer */
-	#carousel {
-		position:  fixed;
-		bottom: 30px;
-		right:  30px;
-		z-index: 4;
-	}
+	/* carousel */
 
-	/* over area around carousel circles */
-	.carousel-hover-area {
-		height:  20px;
-		width: 20px;
-		display:  block;
-		cursor: pointer;
-	}
-
-	#intro-circle-wrapper {
-		margin:  20px 0px 0px 0px;
-	}
-
-	/* individual circles within carousel */
-	.carousel-circle {
-		height: 14px;
-		width: 14px;
-		border-radius: 50%;
-		background-color: black;
-		border-color: black;
-		opacity:  .2;
-		border: 1px;
-		margin:  6px 0px 0px 2px;
-		cursor: pointer;
-	}
-
-	.hover-carousel-circle {
-		opacity: 1;
-		transition-duration: .2s;
-		transition-timing-function: ease-in;
-		cursor:  pointer;
-	}
-
-	.active-carousel-circle {
-		opacity: 1;
-		transition-duration: .2s;
-		transition-timing-function: ease-in;
-		cursor:  pointer;
-	}
-
-	/* carousel caption */
-
-	.carousel-caption {
+	.caption p {
 		font-family:  monospace;
 		color:  black;
 		font-size:  1.3em;
@@ -77,44 +30,41 @@ html {
 		text-align: right;
 		opacity:  0;
 		height:  0px;
-		position:  absolute;
+		position:  fixed;
+		bottom:  196px;
+		right:  27px;
 	}
 
-	.active-carousel-caption {
-		opacity: .8;
-		transition-duration:  .2s;
-		transition-timing-function: ease-in;
+	.caption p.selected-caption {
+		opacity:  1;
 		height:  auto;
+		transition: opacity .2s ease-in 0s;
 	}
 
-	/*intro carousel caption */
-	#intro-caption {
-
+	.control ul {
+		position:  fixed;
+		bottom:  30px;
+		right: 30px;
+		list-style: none;
+		padding: 0;
+		margin: 0;
 	}
 
-	/*specialization carousel caption */
-	#specialization-caption {
-		display: none;
+	.control ul li {
+		height: 14px;
+		width: 14px;
+		border-radius: 50%;
+		background-color: black;
+		border-color: black;
+		opacity:  .2;
+		border: 1px;
+		margin:  14px 0px 0px 0px;
+		cursor: pointer;
 	}
 
-	/*background carousel caption */
-	#background-caption {
-		display: none;
-	}
-
-	/*interests carousel caption */
-	#interests-caption {
-		display: none;
-	}
-
-	/*work carousel caption */
-	#work-caption {
-		display: none;
-	}
-
-	/*contact carousel caption */
-	#contact-caption {
-		display: none;
+	.control ul li.selected {
+		opacity: 1;
+		transition:  opacity .2s ease-in 0s;
 	}
 
 /* grid elements */
