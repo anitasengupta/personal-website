@@ -39,8 +39,8 @@ indicators.forEach((indicator, i) => {
 			if (isInViewport(sections[i])) {
 				document.querySelector('.control .selected').classList.remove('selected');
 	    		indicators[i].classList.add('selected');
-	   		 document.querySelector('.selected-caption').classList.remove('selected-caption');
-	   		 captions[i].classList.add('selected-caption');
+	   		 	document.querySelector('.selected-caption').classList.remove('selected-caption');
+	   		 	captions[i].classList.add('selected-caption');
     		} else {
     		}
   		});
