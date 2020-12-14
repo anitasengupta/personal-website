@@ -9,7 +9,7 @@ section {
 	align-items: center;
 	width:  100vw;
 	height: 100vh;
-	border: solid 2px;
+	/* border: solid 2px; */
 	border-color: black;
 }
 
