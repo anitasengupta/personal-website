@@ -2,13 +2,6 @@ const indicators = document.querySelectorAll('.control li');
 const captions = document.querySelectorAll('.caption p');
 const sections = document.querySelectorAll('section');
 
-// click
-indicators.forEach((indicator, i) => {
-	indicator.addEventListener('click', () => {
-	    sections[i].scrollIntoView();
-	 });
-});
-
 // changing styles on scroll
 const isInViewport = function (elem) {
 	const distance = elem.getBoundingClientRect();
@@ -28,4 +21,28 @@ window.addEventListener('scroll', event => {
     } else {
     }
   });
+});
+
+// indicator behavior on hover and click
+indicators.forEach((indicator, i) => {
+	indicator.addEventListener('click', () => {
+	    sections[i].scrollIntoView();
+	 });
+	indicator.addEventListener('mouseover', () => {
+	    document.querySelector('.control .selected').classList.remove('selected');
+	    indicators[i].classList.add('selected');
+	    document.querySelector('.selected-caption').classList.remove('selected-caption');
+	    captions[i].classList.add('selected-caption');
+	 });
+	indicator.addEventListener('mouseout', () => {
+	    sections.forEach((section, i) => { 
+			if (isInViewport(sections[i])) {
+				document.querySelector('.control .selected').classList.remove('selected');
+	    		indicators[i].classList.add('selected');
+	   		 document.querySelector('.selected-caption').classList.remove('selected-caption');
+	   		 captions[i].classList.add('selected-caption');
+    		} else {
+    		}
+  		});
+	 });
 });
