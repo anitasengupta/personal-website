@@ -332,8 +332,6 @@
 
 // carousel
 const indicators = document.querySelectorAll('.control li');
-const captions = document.querySelectorAll('.caption p');
-const sections = document.querySelectorAll('section');
 
 // changing styles on scroll
 function isInViewport(elem) {
@@ -345,8 +343,7 @@ function isInViewport(elem) {
 }
 
 function resetActiveCarouselStyles(i) {
-  // const indicators = document.querySelectorAll('.control li');
-  // const captions = document.querySelectorAll('.caption p');
+  const captions = document.querySelectorAll('.caption p');
   document.querySelector('.control .selected').classList.remove('selected');
   indicators[i].classList.add('selected');
   document.querySelector('.selected-caption').classList.remove('selected-caption');
@@ -354,7 +351,7 @@ function resetActiveCarouselStyles(i) {
 }
 
 function reflectScrollPosition() {
-  // const sections = document.querySelectorAll('section');
+  const sections = document.querySelectorAll('section');
   sections.forEach((section, i) => { 
   if (isInViewport(sections[i])) {
       resetActiveCarouselStyles(i);
@@ -364,15 +361,22 @@ function reflectScrollPosition() {
 
 window.onscroll = reflectScrollPosition;
 
-// indicator behavior on hover and click
+// carousel indicator behavior on click and hover
+function scrollSectionIntoView(i) {
+  const sections = document.querySelectorAll('section');
+  sections[i].scrollIntoView();
+}
+
 indicators.forEach((indicator, i) => {
   indicator.addEventListener('click', () => {
-    sections[i].scrollIntoView();
+    scrollSectionIntoView(i);
    });
   indicator.addEventListener('mouseover', () => {
     resetActiveCarouselStyles(i);
    });
-  indicator.addEventListener('mouseout', () => {
-    reflectScrollPosition();
-   });
+  indicator.addEventListener('mouseout', reflectScrollPosition);
 });
+
+
+
+
