@@ -1,83 +1,3 @@
-/* // footnotes
-    // close all footnotes
-    function hideFootnotes() {
-      if(event.target != uxDesignFootnote && event.target.parentNode != uxDesignFootnote 
-        && event.target != brandCreationFootnote && event.target.parentNode != brandCreationFootnote 
-        && event.target != printGraphicDesignFootnote && event.target.parentNode != printGraphicDesignFootnote 
-        && event.target != digitalGraphicDesignFootnote && event.target.parentNode != digitalGraphicDesignFootnote
-        && event.target != auxolarFootnote && event.target.parentNode != auxolarFootnote && event.target.parentNode.parentNode != auxolarFootnote
-        && event.target != joySpaceFootnote && event.target.parentNode.parentNode != joySpaceFootnote
-        && event.target != anavaProjectsFootnote && event.target.parentNode != anavaProjectsFootnote && event.target.parentNode.parentNode != anavaProjectsFootnote) {
-        // hide footnotes
-        uxDesignFootnote.style.transition = 'opacity .2s ease-out 0s';
-        uxDesignFootnote.classList.remove('active-footnote');
-        brandCreationFootnote.style.transition = 'opacity .2s ease-out 0s';
-        brandCreationFootnote.classList.remove('active-footnote');
-        printGraphicDesignFootnote.style.transition = 'opacity .2s ease-out 0s';
-        printGraphicDesignFootnote.classList.remove('active-footnote');
-        digitalGraphicDesignFootnote.style.transition = 'opacity .2s ease-out 0s';
-        digitalGraphicDesignFootnote.classList.remove('active-footnote');
-        auxolarFootnote.style.transition = 'opacity .2s ease-out 0s';
-        auxolarFootnote.classList.remove('active-footnote');
-        joySpaceFootnote.style.transition = 'opacity .4s ease-out 0s';
-        // joySpaceFootnote.style.opacity = '0';
-        joySpaceFootnote.classList.remove('active-image-footnote');
-        anavaProjectsFootnote.style.transition = 'opacity .4s ease-out 0s';
-        anavaProjectsFootnote.classList.remove('active-image-footnote');
-
-        // remove active styling on main content links
-        uxDesignMainContent.style.transition = 'opacity .2s ease-out 0s';
-        uxDesignMainContent.classList.remove('active-footnote-link');
-        brandCreationMainContent.style.transition = 'opacity .2s ease-out 0s';
-        brandCreationMainContent.classList.remove('active-footnote-link');
-        printGraphicDesignMainContent.style.transition = 'opacity .2s ease-out 0s';
-        printGraphicDesignMainContent.classList.remove('active-footnote-link');
-        digitalGraphicDesignMainContent.style.transition = 'opacity .2s ease-out 0s';
-        digitalGraphicDesignMainContent.classList.remove('active-footnote-link');
-        auxolarMainContent.style.transition = 'opacity .2s ease-out 0s';
-        auxolarMainContent.classList.remove('active-footnote-link');
-        joySpaceMainContent.style.transition = 'opacity .2s ease-out 0s';
-        joySpaceMainContent.classList.remove('active-footnote-link');
-        anavaProjectsMainContent.style.transition = 'opacity .2s ease-out 0s';
-        anavaProjectsMainContent.classList.remove('active-footnote-link');
-
-        // remove inactive styling on all main content
-        specializationNonLinkedContent1.style.transition = 'opacity .2s ease-in 0s';
-        specializationNonLinkedContent1.classList.remove('inactive-main-content');
-        specializationNonLinkedContent2.style.transition = 'opacity .2s ease-in 0s';
-        specializationNonLinkedContent2.classList.remove('inactive-main-content');
-        specializationNonLinkedContent3.style.transition = 'opacity .2s ease-in 0s';
-        specializationNonLinkedContent3.classList.remove('inactive-main-content');
-        specializationNonLinkedContent4.style.transition = 'opacity .2s ease-in 0s';
-        specializationNonLinkedContent4.classList.remove('inactive-main-content');
-        uxDesignMainContent.style.transition = 'opacity .2s ease-in 0s';
-        uxDesignMainContent.classList.remove('inactive-main-content');
-        brandCreationMainContent.style.transition = 'opacity .2s ease-in 0s';
-        brandCreationMainContent.classList.remove('inactive-main-content');
-        printGraphicDesignMainContent.style.transition = 'opacity .2s ease-in 0s';
-        printGraphicDesignMainContent.classList.remove('inactive-main-content');
-        digitalGraphicDesignMainContent.style.transition = 'opacity .2s ease-in 0s';
-        digitalGraphicDesignMainContent.classList.remove('inactive-main-content');
-        workNonLinkedContent1.style.transition = 'opacity .2s ease-in 0s';
-        workNonLinkedContent1.classList.remove('inactive-main-content');
-        workNonLinkedContent2.style.transition = 'opacity .2s ease-in 0s';
-        workNonLinkedContent2.classList.remove('inactive-main-content');
-        workNonLinkedContent3.style.transition = 'opacity .2s ease-in 0s';
-        workNonLinkedContent3.classList.remove('inactive-main-content');
-        auxolarMainContent.style.transition = 'opacity .2s ease-in 0s';
-        auxolarMainContent.classList.remove('inactive-main-content');
-        joySpaceMainContent.style.transition = 'opacity .2s ease-in 0s';
-        joySpaceMainContent.classList.remove('inactive-main-content');
-        anavaProjectsMainContent.style.transition = 'opacity .2s ease-in 0s';
-        anavaProjectsMainContent.classList.remove('inactive-main-content');
-      }
-    }
-
-  // event listeners
-    // close all specialization footnotes
-    window.onmouseup = hideFootnotes; */
-
-
 // carousel
 const indicators = document.querySelectorAll('.control li');
 const sections = document.querySelectorAll('section');
@@ -216,11 +136,11 @@ const captions = document.querySelectorAll('.caption p');
       span.classList.remove('inactive-main-content');
     });
   }
-
+  
   function closeFootnotes() {
-    if (event.target.parentNode != specializationFootnotes[0] &&
-        event.target.parentNode != workFootnotes[0] &&
-        event.target.parentNode.parentNode != workFootnotes[0]) {
+    if (!Array.prototype.slice.call(specializationFootnotes).includes(event.target.parentNode) &&
+    	!Array.prototype.slice.call(workFootnotes).includes(event.target.parentNode) &&
+    	!Array.prototype.slice.call(workFootnotes).includes(event.target.parentNode.parentNode)) {
       clearSpecializationFootnotes();
       clearWorkFootnotes();
       resetMainContentStyles();
