@@ -145,6 +145,7 @@ const captions = document.querySelectorAll('.caption p');
   function clearSpecializationFootnotes() {
     specializationFootnotes.forEach((footnote) => {
       if (footnote.classList.contains('active-specialization-footnote')) {
+      	footnote.style.transition = 'opacity .2s ease-out 0s';
         footnote.classList.remove('active-specialization-footnote');
       }
     });
@@ -182,6 +183,7 @@ const captions = document.querySelectorAll('.caption p');
   function clearWorkFootnotes() {
     workFootnotes.forEach((footnote) => {
       if (footnote.classList.contains('active-work-footnote')) {
+      	footnote.style.transition = 'opacity .2s ease-out 0s'; // not working
         footnote.classList.remove('active-work-footnote');
       }
     });
@@ -199,9 +201,31 @@ const captions = document.querySelectorAll('.caption p');
       });
     });
 
-function closeFootnotes() {
-  if (event.target != specializationFootnotes && event.target != workFootnotes) {
-
+  // clear footnotes
+  function resetMainContentStyles() {
+    specializationMainContent.forEach((span) => {
+      span.style.transition = 'opacity .2s ease-out 0s';
+      span.classList.remove('active-footnote-link');
+      span.style.transition = 'opacity .2s ease-in 0s';
+      span.classList.remove('inactive-main-content');
+    });
+    workMainContent.forEach((span) => {
+      span.style.transition = 'opacity .2s ease-out 0s';
+      span.classList.remove('active-footnote-link');
+      span.style.transition = 'opacity .2s ease-in 0s';
+      span.classList.remove('inactive-main-content');
+    });
   }
-}
+
+  function closeFootnotes() {
+    if (event.target.parentNode != specializationFootnotes[0] &&
+        event.target.parentNode != workFootnotes[0] &&
+        event.target.parentNode.parentNode != workFootnotes[0]) {
+      clearSpecializationFootnotes();
+      clearWorkFootnotes();
+      resetMainContentStyles();
+    }
+  }
+
+window.onmouseup = closeFootnotes;
 
