@@ -19,7 +19,6 @@ html {
 	}
 
 	/* carousel */
-
 	.caption p {
 		font-family:  monospace;
 		color:  black;
@@ -78,7 +77,7 @@ html {
 
 	/* main content */
 		/* typography */
-			/* large text sentences */
+			/* main content */
 			.main-content {
 				font-family: sans-serif;
 				color: black;
@@ -92,25 +91,12 @@ html {
 				opacity:  .8;
 			}
 
-			.specialization-footnote-link {
+			.footnote-link {
 				cursor:  pointer;
 				opacity:  .8;
 			}
 
-			.specialization-footnote-link:hover {
-				opacity: 1;
-				transition-duration: .2s;
-				transition-timing-function: ease-in;
-				position: relative;
-				z-index: 3;
-			}
-
-			.work-footnote-link {
-				cursor:  pointer;
-				opacity:  .8;
-			}
-
-			.work-footnote-link:hover {
+			.footnote-link:hover {
 				opacity: 1;
 				transition-duration: .2s;
 				transition-timing-function: ease-in;
@@ -132,7 +118,6 @@ html {
 				z-index: 1;
 			}
 
-			/* superscripts in main content */
 			.main-content sup {
 				font-family: monospace;
 				font-size: .5em;
@@ -191,7 +176,7 @@ html {
 			grid-column-end:  span 7;
 		}
 
-		/* footnotes */
+		/* specialization footnotes */
 		.specialization-footnote {
 			grid-row-start: 2;
 		    grid-row-end: 5;
@@ -222,8 +207,15 @@ html {
     		line-height: 2.4em;
 		}
 
-		/* image style footnotes */
-		.image-style-footnote {
+		.active-specialization-footnote {
+			height:  auto;
+			opacity:  1;
+			transition: opacity .2s ease-in 0s;
+			z-index: 2;
+		}
+
+		/* work footnotes */
+		.work-footnote {
 			grid-row-start: 3;
     		grid-row-end: 7;
     		grid-column-start: 3;
@@ -236,7 +228,7 @@ html {
 			overflow: hidden;
 		}
 
-		.image-style-footnote-caption {
+		.footnote-caption {
 			font-family: monospace;
 			color: black;
 			font-size: 1.3em;	
@@ -245,18 +237,11 @@ html {
 			width: 85%;
 		}
 
-		.image-style-footnote-image {
+		.footnote-image {
 			width: 86%;
 		}
 
-		.active-footnote {
-			height:  auto;
-			opacity:  1;
-			transition: opacity .2s ease-in 0s;
-			z-index: 2;
-		}
-
-		.active-image-footnote {
+		.active-work-footnote {
 			display:  block;
 			height:  auto;
 			/* height: 500px; - javascript height transitions worked with fixed value */
