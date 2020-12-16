@@ -82,7 +82,7 @@ html {
 			.main-content {
 				font-family: sans-serif;
 				color: black;
-				opacity:  100;
+				opacity:  1;
 				font-size: 3em;
 				line-height: 1.3;
 				margin:  0;
@@ -92,12 +92,25 @@ html {
 				opacity:  .8;
 			}
 
-			.footnote-link {
+			.specialization-footnote-link {
 				cursor:  pointer;
 				opacity:  .8;
 			}
 
-			.footnote-link:hover {
+			.specialization-footnote-link:hover {
+				opacity: 1;
+				transition-duration: .2s;
+				transition-timing-function: ease-in;
+				position: relative;
+				z-index: 3;
+			}
+
+			.work-footnote-link {
+				cursor:  pointer;
+				opacity:  .8;
+			}
+
+			.work-footnote-link:hover {
 				opacity: 1;
 				transition-duration: .2s;
 				transition-timing-function: ease-in;
@@ -109,6 +122,7 @@ html {
 				opacity:  1;
 				position: relative;
 				z-index:  3;
+				/* color: #ff00ff; */
 			}
 
 			.inactive-main-content {
@@ -139,7 +153,6 @@ html {
 			grid-row-end:  8;
 			grid-column-start: 2;
 			grid-column-end:  span 7;
-			align-self:  end;
 		}
 
 		/* background */
@@ -162,11 +175,11 @@ html {
 
 		/* work */
 		#work-main-content {
-			grid-row-start:  6;
+			grid-row-start:  4;
 			grid-row-end:  10;
 			grid-column-start: 2;
 			grid-column-end:  span 7;
-			align-self:  end;
+			align-self:  start;
 		}
 
 		/* contact */
@@ -179,22 +192,19 @@ html {
 		}
 
 		/* footnotes */
-		.list-overlay {
+		.specialization-footnote {
 			grid-row-start: 2;
 		    grid-row-end: 5;
 		    grid-column-start: 8;
 		    grid-column-end: 10;
 		    justify-self: start;
 		    align-self: start;
-		}
-
-		.list-style-footnote {
 			opacity:  0;
 			height:  0px;
 			overflow: hidden;
 		}
 
-		.list-style-footnote-number {
+		.footnote-number {
 			display: inline-block;
     		position: absolute;
     		font-family: monospace;
@@ -213,20 +223,17 @@ html {
 		}
 
 		/* image style footnotes */
-		.image-overlay {
-			grid-row-start: 2;
+		.image-style-footnote {
+			grid-row-start: 3;
     		grid-row-end: 7;
-    		grid-column-start: 5;
+    		grid-column-start: 3;
     		grid-column-end: 10;
     		align-self: start;
     		justify-self: start;
-		}
-
-		.image-style-footnote {
+    		/* transform: translate(calc(-50% + var(--mouse-offset-x) / 10), calc(-50% + var(--mouse-offset-y) / 10)); */
 			opacity:  0;
 			height:  0px;
 			overflow: hidden;
-			position: absolute;
 		}
 
 		.image-style-footnote-caption {
@@ -239,7 +246,7 @@ html {
 		}
 
 		.image-style-footnote-image {
-			width: 85%;
+			width: 86%;
 		}
 
 		.active-footnote {
