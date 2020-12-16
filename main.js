@@ -1,4 +1,4 @@
-// footnotes
+/* // footnotes
   // variables
 
     // specialization main content
@@ -327,7 +327,7 @@
     anavaProjectsMainContent.onclick = showAnavaProjectsFootnote;
 
     // close all specialization footnotes
-    window.onmouseup = hideFootnotes;
+    window.onmouseup = hideFootnotes; */
 
 
 // carousel
@@ -335,47 +335,66 @@ const indicators = document.querySelectorAll('.control li');
 const sections = document.querySelectorAll('section');
 const captions = document.querySelectorAll('.caption p');
 
-// changing styles on scroll
-function isInViewport(elem) {
-  const distance = elem.getBoundingClientRect();
-  return (
-    distance.top >= distance.height * -1 &&
-    distance.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-  );
-}
+  // changing styles on scroll
+  function isInViewport(elem) {
+    const distance = elem.getBoundingClientRect();
+    return (
+      distance.top >= distance.height * -1 &&
+      distance.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+  }
 
-function resetActiveCarouselStyles(i) {
-  document.querySelector('.control .selected').classList.remove('selected');
-  indicators[i].classList.add('selected');
-  document.querySelector('.selected-caption').classList.remove('selected-caption');
-  captions[i].classList.add('selected-caption');
-}
+  function resetActiveCarouselStyles(i) {
+    document.querySelector('.control .selected').classList.remove('selected');
+    indicators[i].classList.add('selected');
+    document.querySelector('.selected-caption').classList.remove('selected-caption');
+    captions[i].classList.add('selected-caption');
+  }
 
-function reflectScrollPosition() {
-  sections.forEach((section, i) => { 
-  if (isInViewport(sections[i])) {
+  function reflectScrollPosition() {
+    sections.forEach((section, i) => { 
+    if (isInViewport(sections[i])) {
+        resetActiveCarouselStyles(i);
+      }
+    });
+  }
+
+  window.onscroll = reflectScrollPosition;
+
+  // carousel indicator behavior on click and hover
+  function scrollSectionIntoView(i) {
+    sections[i].scrollIntoView();
+  }
+
+  indicators.forEach((indicator, i) => {
+    indicator.addEventListener('click', () => {
+      scrollSectionIntoView(i);
+    });
+    indicator.addEventListener('mouseover', () => {
       resetActiveCarouselStyles(i);
-    }
+     });
+    indicator.addEventListener('mouseout', reflectScrollPosition);
   });
+
+// footnotes
+
+const specializationMainContent = document.getElementById('specialization-main-content');
+const specializationFootnoteLinks = document.querySelectorAll('.specialization-footnote-link');
+const specializationFootnotes = document.querySelectorAll('.specialization-footnote');
+
+function showClickedFootnote(i) {
+  // document.querySelector('.specialization-footnote .active-footnote').classList.remove('active-footnote');
+  specializationFootnotes[i].classList.add('active-footnote');
+  // specializationMainContent.children.classList.add('inactive-main-content')
+  // specializationFootnoteLinks[i].classList.remove('inactive-main-content');
+  specializationFootnoteLinks[i].classList.add('active-footnote-link');
 }
 
-window.onscroll = reflectScrollPosition;
-
-// carousel indicator behavior on click and hover
-function scrollSectionIntoView(i) {
-  sections[i].scrollIntoView();
-}
-
-indicators.forEach((indicator, i) => {
-  indicator.addEventListener('click', () => {
-    scrollSectionIntoView(i);
+specializationFootnoteLinks.forEach((link, i) => {
+    link.addEventListener('click', () => {
+      showClickedFootnote(i);
+    });
   });
-  indicator.addEventListener('mouseover', () => {
-    resetActiveCarouselStyles(i);
-   });
-  indicator.addEventListener('mouseout', reflectScrollPosition);
-});
-
 
 
 
