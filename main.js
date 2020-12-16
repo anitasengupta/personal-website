@@ -1,88 +1,4 @@
 /* // footnotes
-  // variables
-    // work main content
-    const workNonLinkedContent1 = document.getElementById('work-non-linked-content-1');
-    const workNonLinkedContent2 = document.getElementById('work-non-linked-content-2');
-    const workNonLinkedContent3 = document.getElementById('work-non-linked-content-3');
-    const auxolarMainContent = document.getElementById('auxolar');
-    const joySpaceMainContent = document.getElementById('joy-space');
-    const anavaProjectsMainContent = document.getElementById('anava-projects');
-
-    // work footnotes
-    const auxolarFootnote = document.getElementById('auxolar-footnote');
-    const joySpaceFootnote = document.getElementById('joy-space-footnote');
-    const anavaProjectsFootnote = document.getElementById('anava-projects-footnote');
-
-  // functions
-    // open auxolar footnote
-    function showAuxolarFootnote() {
-      // hide any already visible footnotes
-      joySpaceFootnote.style.transition = 'opacity .2s ease-out 0s';
-      joySpaceFootnote.classList.remove('active-image-footnote');
-      anavaProjectsFootnote.style.transition = 'opacity .2s ease-out 0s';
-      anavaProjectsFootnote.classList.remove('active-image-footnote');
-
-      // show relevant footnote
-      auxolarFootnote.classList.add('active-footnote');
-
-      // give main content link active styles
-      auxolarMainContent.classList.add('active-footnote-link')
-
-      // give other main content inactive styles
-      workNonLinkedContent1.classList.add('inactive-main-content');
-      workNonLinkedContent2.classList.add('inactive-main-content');
-      workNonLinkedContent3.classList.add('inactive-main-content');
-      joySpaceMainContent.classList.add('inactive-main-content');
-      anavaProjectsMainContent.classList.add('inactive-main-content');
-    }
-
-    // open joy space footnote
-    function showJoySpaceFootnote() {
-      // hide any already visible footnotes
-      auxolarFootnote.style.transition = 'opacity .2s ease-out 0s';
-      auxolarFootnote.classList.remove('active-footnote');
-      anavaProjectsFootnote.style.transition = 'opacity .4s ease-out 0s';
-      anavaProjectsFootnote.classList.remove('active-image-footnote');
-
-      // show relevant footnote
-      joySpaceFootnote.style.transition = 'opacity .4s ease-in 0s';
-      joySpaceFootnote.classList.add('active-image-footnote');
-
-      // give main content link active styles
-      joySpaceMainContent.classList.add('active-footnote-link')
-
-      // give other main content inactive styles
-      workNonLinkedContent1.classList.add('inactive-main-content');
-      workNonLinkedContent2.classList.add('inactive-main-content');
-      workNonLinkedContent3.classList.add('inactive-main-content');
-      auxolarMainContent.classList.add('inactive-main-content');
-      anavaProjectsMainContent.classList.add('inactive-main-content');
-    }
-
-    // open anava projects footnote
-    function showAnavaProjectsFootnote() {
-      // hide any already visible footnotes
-      auxolarFootnote.style.transition = 'opacity .2s ease-out 0s';
-      auxolarFootnote.classList.remove('active-footnote');
-      joySpaceFootnote.style.transition = 'opacity .4s ease-out 0s';
-      joySpaceFootnote.classList.remove('active-image-footnote');
-
-      // show relevant footnote
-      anavaProjectsFootnote.style.transition = 'opacity .4s ease-in 0s';
-      anavaProjectsFootnote.classList.add('active-image-footnote');
-
-
-      // give main content link active styles
-      anavaProjectsMainContent.classList.add('active-footnote-link')
-
-      // give other main content inactive styles
-      workNonLinkedContent1.classList.add('inactive-main-content');
-      workNonLinkedContent2.classList.add('inactive-main-content');
-      workNonLinkedContent3.classList.add('inactive-main-content');
-      auxolarMainContent.classList.add('inactive-main-content');
-      joySpaceMainContent.classList.add('inactive-main-content');
-    }
-
     // close all footnotes
     function hideFootnotes() {
       if(event.target != uxDesignFootnote && event.target.parentNode != uxDesignFootnote 
@@ -158,15 +74,6 @@
     }
 
   // event listeners
-    //open auxolar footnote
-    auxolarMainContent.onclick = showAuxolarFootnote;
-
-    //open joy space footnote
-    joySpaceMainContent.onclick = showJoySpaceFootnote;
-
-    //open anava projects footnote
-    anavaProjectsMainContent.onclick = showAnavaProjectsFootnote;
-
     // close all specialization footnotes
     window.onmouseup = hideFootnotes; */
 
@@ -220,10 +127,10 @@ const captions = document.querySelectorAll('.caption p');
 // footnotes
   // specialization footnotes
   const specializationMainContent = document.querySelectorAll('#specialization-main-content span');
-  const specializationFootnoteLinks = document.querySelectorAll('.specialization-footnote-link');
+  const specializationFootnoteLinks = document.querySelectorAll('#specialization-main-content .footnote-link');
   const specializationFootnotes = document.querySelectorAll('.specialization-footnote');
 
-  function styleActiveFootnoteLink() {
+  function styleActiveFootnoteLinkSpecialization() {
     specializationMainContent.forEach((span) => {
       if (span != event.target) {
         span.classList.remove('active-footnote-link');
@@ -237,23 +144,64 @@ const captions = document.querySelectorAll('.caption p');
 
   function clearSpecializationFootnotes() {
     specializationFootnotes.forEach((footnote) => {
-      if (footnote.classList.contains('active-footnote')) {
-        footnote.classList.remove('active-footnote');
+      if (footnote.classList.contains('active-specialization-footnote')) {
+        footnote.classList.remove('active-specialization-footnote');
       }
     });
   }
 
-  function showClickedFootnote(i) {
+  function showClickedSpecializationFootnote(i) {
     clearSpecializationFootnotes();
-    specializationFootnotes[i].classList.add('active-footnote');
-    styleActiveFootnoteLink();
+    specializationFootnotes[i].classList.add('active-specialization-footnote');
+    styleActiveFootnoteLinkSpecialization();
   }
 
   specializationFootnoteLinks.forEach((link, i) => {
       link.addEventListener('click', () => {
-        showClickedFootnote(i);
+        showClickedSpecializationFootnote(i);
       });
     });
 
+  // work footnotes
+  const workMainContent = document.querySelectorAll('#work-main-content span');
+  const workFootnoteLinks = document.querySelectorAll('#work-main-content .footnote-link');
+  const workFootnotes = document.querySelectorAll('.work-footnote');
 
+  function styleActiveFootnoteLinkWork() {
+    workMainContent.forEach((span) => {
+      if (span != event.target) {
+        span.classList.remove('active-footnote-link');
+        span.classList.add('inactive-main-content');
+      } else {
+        span.classList.remove('inactive-main-content');
+        span.classList.add('active-footnote-link');
+      }
+    });
+  }
+
+  function clearWorkFootnotes() {
+    workFootnotes.forEach((footnote) => {
+      if (footnote.classList.contains('active-work-footnote')) {
+        footnote.classList.remove('active-work-footnote');
+      }
+    });
+  }
+
+  function showClickedWorkFootnote(i) {
+    clearWorkFootnotes();
+    workFootnotes[i].classList.add('active-work-footnote');
+    styleActiveFootnoteLinkWork();
+  }
+
+  workFootnoteLinks.forEach((link, i) => {
+      link.addEventListener('click', () => {
+        showClickedWorkFootnote(i);
+      });
+    });
+
+function closeFootnotes() {
+  if (event.target != specializationFootnotes && event.target != workFootnotes) {
+
+  }
+}
 
