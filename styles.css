@@ -1,251 +1,125 @@
-/* small desktop */
-/* scroll behavior */
+@font-face {
+  font-family: "ABCWhyte";
+  src: url("/fonts/ABCWhyte-Regular.woff2") format("woff2"),
+       url("/fonts/ABCWhyte-Regular.woff") format("woff");
+}
+
 html {
 	scroll-behavior: smooth;
 }
-/* fixed elements */
-	/* name in nav */
+
+body {
+	margin: 0px;
+}
+
+#name {
+	position:  fixed;
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+	font-family: ABCWhyte, sans-serif;
+	color: black;
+	font-size: 1.625rem;
+	line-height: 1.1;
+}
+
+#content {
+	position: fixed;
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+	font-family: ABCWhyte, sans-serif;
+	color: black;
+	line-height: 1.1;
+
+}
+
+/* links */
+a {
+	text-decoration: none;
+	color: rgba(80, 255, 0, 1);
+}
+
+a:hover,
+a:focus {
+	text-decoration: underline;
+	color: rgba(80, 255, 0, 1);
+}
+
+a:visited {
+	color: rgba(80, 255, 0, 1);
+}
+
+/* small mobile styles */
+@media only screen and (max-width: 375px) {
 	#name {
-		position:  fixed;
-		top:  30px;
-		left:  30px;
-		font-family: sans-serif;
-		color: black;
-		opacity: .8;
-		font-size: 2em;
-		margin-block-start: 0em;
-    	margin-block-end: 0em;
-    	z-index: 4;
+		bottom:  16px;
+		right:  16px;
 	}
 
-	/* carousel */
-	.caption p {
-		font-family:  monospace;
-		color:  black;
-		font-size:  1.3em;
-		writing-mode: vertical-lr;
-		text-orientation: upright;
-		margin:  0px 0px 0px 0px;
-		text-align: right;
-		opacity:  0;
-		height:  0px;
-		position:  fixed;
-		bottom:  196px;
-		right:  27px;
+	#content {
+		font-size: 1.625rem;
+		top:  16px;
+		left:  16px;
+		right: 16px;
+		width: auto;
+	}
+}
+
+/* mobile styles */
+@media only screen and (min-width: 375px) {
+	#name {
+		bottom:  16px;
+		right:  16px;
 	}
 
-	.caption p.selected-caption {
-		opacity:  1;
-		height:  auto;
-		transition: opacity .2s ease-in 0s;
+	#content {
+		font-size: 1.625rem;
+		top:  16px;
+		left:  16px;
+		width: 339px;
+	}
+}
+
+/*small tablet styles */
+@media only screen and (min-width: 560px) {
+	#name {
+		bottom:  32px;
+		right:  32px;
 	}
 
-	.control ul {
-		position:  fixed;
-		bottom:  30px;
-		right: 30px;
-		list-style: none;
-		padding: 0;
-		margin: 0;
+	#content {
+		font-size: 1.625rem;
+		top:  32px;
+		left:  32px;
+		width: 383px;
+	}
+}
+
+/*tablet and desktop styles */
+@media only screen and (min-width: 768px) {
+	#name {
+		bottom:  32px;
+		right:  32px;
 	}
 
-	.control ul li {
-		height: 14px;
-		width: 14px;
-		border-radius: 50%;
-		background-color: black;
-		border-color: black;
-		opacity:  .2;
-		border: 1px;
-		margin:  14px 0px 0px 0px;
-		cursor: pointer;
+	#content {
+		font-size: 2.625rem;
+		top:  32px;
+		left:  32px;
+		width: 591px;
+	}
+}
+
+/* large desktop styles */
+@media only screen and (min-width: 1440px) {
+	#name {
+		bottom:  32px;
+		right:  32px;
 	}
 
-	.control ul li.selected {
-		opacity: 1;
-		transition:  opacity .2s ease-in 0s;
+	#content {
+		font-size: 3.4375rem;
+		top:  32px;
+		left:  32px;
+		width: 774px;
 	}
-
-/* grid elements */
-	/* container for each of six sections */
-	.grid  {
-		display: grid;
-		width: 100vw;
-		height: 100vh;
-		grid-template: repeat(10, 1fr) / repeat(10, 1fr);
-	}
-
-	/* main content */
-		/* typography */
-			/* main content */
-			.main-content {
-				font-family: sans-serif;
-				color: black;
-				opacity:  1;
-				font-size: 3em;
-				line-height: 1.3;
-				margin:  0;
-			}
-
-			.non-linked-main-content {
-				opacity:  .8;
-			}
-
-			.footnote-link {
-				cursor:  pointer;
-				opacity:  .8;
-			}
-
-			.footnote-link:hover {
-				opacity: 1;
-				transition-duration: .2s;
-				transition-timing-function: ease-in;
-				position: relative;
-				z-index: 3;
-			}
-
-			.active-footnote-link {
-				opacity:  1;
-				position: relative;
-				z-index:  3;
-				/* color: #ff00ff; */
-			}
-
-			.inactive-main-content {
-				opacity:  .2;
-				transition-duration: .2s;
-				transition-timing-function: ease-out;
-				z-index: 1;
-			}
-
-			.main-content sup {
-				font-family: monospace;
-				font-size: .5em;
-			}
-
-		/* intro */
-		#intro-main-content {
-			grid-row-start:  4;
-			grid-row-end:  7;
-			grid-column-start: 2;
-			grid-column-end:  span 7;
-			align-self:  end;
-		}
-
-		/* specialization */
-		#specialization-main-content {
-			grid-row-start:  6;
-			grid-row-end:  8;
-			grid-column-start: 2;
-			grid-column-end:  span 7;
-		}
-
-		/* background */
-		#background-main-content {
-			grid-row-start:  6;
-			grid-row-end:  8;
-			grid-column-start: 2;
-			grid-column-end:  span 7;
-			align-self:  end;
-		}
-
-		/* interests */
-		#interests-main-content {
-			grid-row-start:  6;
-			grid-row-end:  8;
-			grid-column-start: 2;
-			grid-column-end:  span 7;
-			align-self:  end;
-		}
-
-		/* work */
-		#work-main-content {
-			grid-row-start:  4;
-			grid-row-end:  10;
-			grid-column-start: 2;
-			grid-column-end:  span 7;
-			align-self:  start;
-		}
-
-		/* contact */
-		#contact-main-content {
-			grid-row-start:  4;
-			grid-row-end:  8;
-			grid-column-start: 2;
-			align-self: center;
-			grid-column-end:  span 7;
-		}
-
-		/* specialization footnotes */
-		.specialization-footnote {
-			grid-row-start: 2;
-		    grid-row-end: 5;
-		    grid-column-start: 8;
-		    grid-column-end: 10;
-		    justify-self: start;
-		    align-self: start;
-			opacity:  0;
-			height:  0px;
-			overflow: hidden;
-		}
-
-		.footnote-number {
-			display: inline-block;
-    		position: absolute;
-    		font-family: monospace;
-    		color: black;
-    		font-size: 1em;
-		}
-
-		.footnote-list {
-			display: inline-block;
-    		position: absolute;
-    		margin-left: 14px;
-    		font-family: monospace;
-    		color: black;
-    		font-size: 1.3em;
-    		line-height: 2.4em;
-		}
-
-		.active-specialization-footnote {
-			height:  auto;
-			opacity:  1;
-			transition: opacity .2s ease-in 0s;
-			z-index: 2;
-		}
-
-		/* work footnotes */
-		.work-footnote {
-			grid-row-start: 3;
-    		grid-row-end: 7;
-    		grid-column-start: 3;
-    		grid-column-end: 10;
-    		align-self: start;
-    		justify-self: start;
-    		/* transform: translate(calc(-50% + var(--mouse-offset-x) / 10), calc(-50% + var(--mouse-offset-y) / 10)); */
-			opacity:  0;
-			height:  0px;
-			overflow: hidden;
-		}
-
-		.footnote-caption {
-			font-family: monospace;
-			color: black;
-			font-size: 1.3em;	
-			line-height: 1.6em;
-			margin:  0px 0px 12px 0px;
-			width: 85%;
-		}
-
-		.footnote-image {
-			width: 86%;
-		}
-
-		.active-work-footnote {
-			display:  block;
-			height:  auto;
-			/* height: 500px; - javascript height transitions worked with fixed value */
-			opacity:  1;
-			transition: opacity .4s ease-in 0s;
-			z-index: 2;
-		}
+}
