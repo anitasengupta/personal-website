@@ -67,6 +67,11 @@ a:visited {
 		right: 16px;
 		width: auto;
 	}
+
+  a {
+    text-decoration-thickness: 1.625rem;
+    text-underline-offset: -2.1rem;
+  }
 }
 
 /* mobile styles */
