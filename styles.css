@@ -41,7 +41,7 @@ p {
 a {
   color: black;
   text-decoration-color: rgba(238, 255, 0, 0.7);
-  text-decoration-skip-ink: none !important;
+  text-decoration-skip-ink: none;
 }
 
 a:hover,
