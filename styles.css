@@ -32,6 +32,11 @@ body {
   height: 1.1rem;
 }
 
+p {
+  margin-block-start: 0em;
+	margin-block-end: 0em;
+}
+
 /* links */
 a {
   color: black;
