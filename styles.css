@@ -1,7 +1,7 @@
 @font-face {
   font-family: "ABCWhyte";
-  src: url("/fonts/ABCWhyte-Regular.woff2") format("woff2"),
-       url("/fonts/ABCWhyte-Regular.woff") format("woff");
+  src: url("fonts/ABCWhyte-Regular.woff2") format("woff2"),
+       url("fonts/ABCWhyte-Regular.woff") format("woff");
 }
 
 html {
@@ -10,6 +10,11 @@ html {
 
 body {
 	margin: 0px;
+}
+
+p {
+  margin-block-start: 0em;
+	margin-block-end: 0em;
 }
 
 #name {
@@ -22,6 +27,7 @@ body {
 	line-height: 1.1;
 }
 
+/* content styles */
 #content {
 	position: fixed;
 	margin-block-start: 0em;
@@ -32,9 +38,28 @@ body {
   height: 1.1rem;
 }
 
-p {
+span {
   margin-block-start: 0em;
 	margin-block-end: 0em;
+}
+
+#intro {
+
+}
+
+#specialization {
+  display: none;
+  opacity: 0;
+}
+
+#work {
+  display: none;
+  opacity: 0;
+}
+
+#contact {
+  display: none;
+  opacity: 0;
 }
 
 /* links */
@@ -54,6 +79,15 @@ a:focus {
 
 a:visited {
   color: black;
+}
+
+/* animation triggers */
+.trigger-offset {
+  height: 55vh;
+}
+
+.trigger {
+  height: 20vh;
 }
 
 /* small mobile styles */
