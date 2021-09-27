@@ -17,18 +17,35 @@
 		<meta name="description" content="Anita Sengupta is a designer based in Berlin (& sometimes New York).">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<!-- favicon, social previews -->
+		<meta property="og:image" content="metadata/social-share-image.png"/>
+		<link rel="icon" href="metadata/favicon.png"/>
+
   	<!-- styling & interaction -->
   	<link rel="stylesheet" type="text/css" href="styles.css">
-
-  	<!-- favicon, social previews -->
-		<meta property="og:image" content="social-share-image.png"/>
-		<link rel="icon" href="favicon.png"/>
-
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.js" integrity="sha512-judXDFLnOTJsUwd55lhbrX3uSoSQSOZR6vNrsll+4ViUFv+XOIr/xaIK96soMj6s5jVszd7I97a0H+WhgFwTEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script type="text/javascript" src="main.js" async></script>
 	</head>
 	<body>
 		<div id="content">
-			<p>I’m a designer based in Berlin (& sometimes New York). I specialize in strategy, brand creation, and user experience. I'm interested in consciously building a reimagined future. I'm currently supporting <a href="https://tzconnect.com/en/" target="_blank">open-source projects on the Tezos blockchain</a> & contributing to a <a href="https://www.joyspace.berlin/" target="_blank">feminist wellness collective</a>. Contact me at <a href="mailto:anita.m.sengupta@gmail.com">anita.m.sengupta<wbr>@gmail.com</a>.
+			<span id="intro">I’m a designer based in Berlin (& sometimes New York).</span>
+			<span id="specialization"> I specialize in strategy, brand creation, and user experience.</span>
+			<span id="work"> I'm interested in consciously building a reimagined future. I'm currently supporting <a href="https://tzconnect.com/en/" target="_blank">open-source projects on the Tezos blockchain</a> & contributing to a <a href="https://www.joyspace.berlin/" target="_blank">feminist wellness collective</a>.</span>
+			<span id="contact"> Contact me at <a href="mailto:anita.m.sengupta@gmail.com">anita.m.sengupta<wbr>@gmail.com</a>.</span>
 		</div>
 		<p id="name">Anita<br>Sengupta</p>
+		<div id="triggers">
+			<div class="trigger-offset"></div>
+	    <div class="trigger" id="one"></div>
+	    <div class="trigger" id="two"></div>
+	    <div class="trigger" id="three"></div>
+			<div class="trigger" id="four"></div>
+	    <div class="trigger" id="five"></div>
+	    <div class="trigger" id="six"></div>
+			<div class="trigger-offset"></div>
+		</div>
 	</body>
 </html>
