@@ -2,7 +2,7 @@
   font-family: TimesDotRom;
   font-style: normal;
   src: url('fonts/TimesDotRom.otf');
-  text-rendering: optimizeLegibility;
+  /* text-rendering: optimizeLegibility; */
 }
 
 html {
