@@ -1,6 +1,7 @@
 @font-face {
   font-family: TimesDotRom;
-  font-style: normal;
+  /* src: url("fonts/timesdotrom-webfont.ttf") format("ttf"); */
+  /* font-style: normal; */
   src: url('fonts/TimesDotRom.otf');
   /* text-rendering: optimizeLegibility; */
 }
