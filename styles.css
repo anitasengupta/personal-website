@@ -1,7 +1,6 @@
 @font-face {
-  font-family: "ABCWhyte";
-  src: url("fonts/ABCWhyte-Regular.woff2") format("woff2"),
-       url("fonts/ABCWhyte-Regular.woff") format("woff");
+  font-family: "TimesDot";
+  src: url("/fonts/timesdotrom-webfont.ttf") format("ttf");
 }
 
 html {
@@ -10,258 +9,155 @@ html {
 
 body {
 	margin: 0px;
+	background-color: #f7f7f7;
 }
 
 p {
   margin-block-start: 0em;
 	margin-block-end: 0em;
+	padding-bottom: 28px;
 }
 
-#name {
-	position:  fixed;
-	margin-block-start: 0em;
-	margin-block-end: 0em;
-	font-family: ABCWhyte, sans-serif;
-	color: black;
-	font-size: 1.625rem;
-	line-height: 1.1;
-}
-
-/* content styles */
-#content {
-	position: fixed;
-	margin-block-start: 0em;
-	margin-block-end: 0em;
-	font-family: ABCWhyte, sans-serif;
-	color: black;
-	line-height: 1.1;
-  height: 1.1rem;
-}
-
-span {
-  margin-block-start: 0em;
-	margin-block-end: 0em;
-}
-
-#specialization {
-  display: none;
-  opacity: 0;
-}
-
-#work {
-  display: none;
-  opacity: 0;
-}
-
-#contact {
-  display: none;
-  opacity: 0;
-}
-
-/* links */
 a {
-  color: black;
-  text-decoration: none;
-  background-image: linear-gradient(0deg, rgba(238,255,0,0.7) 0%, rgba(238,255,0,0.7) 100%);
-  background-repeat: no-repeat;
-  background-size: 100% .95em;
-  background-position: 0 60%;
+  color: #00ff00;
 }
 
 a:hover,
 a:focus {
-  background-image: linear-gradient(0deg, rgba(238,255,0,1) 0%, rgba(238,255,0,1) 100%);
+  color: #000000;
 }
 
-a:visited {
-  color: black;
+#content {
+	position: fixed;
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+	font-family: TimesDot, serif;
+	color: black;
+	line-height: 1.1;
+  /* height: 1.1rem; */
 }
 
-/* indicators */
-.indicators p {
-  align-self: center;
-  font-family: ABCWhyte, sans-serif;
-  color:  black;
-  font-size:  1em;
-  text-align: right;
+#contact {
+	padding-top: 52px;
 }
 
-.indicators div {
-  justify-self: center;
-  align-self: center;
-  height: .75rem;
-  width: .75rem;
-  background-color: black;
-  border-color: black;
-  border: 1px;
-  margin:  0px 0px 0px 0px;
+#circles div {
+	height: 12px;
+	width: 12px;
+	border-radius: 6px;
+	background-color: black;
+	display: block;
 }
 
-#sp-cap {
-  opacity: 0;
+#circles {
+	position:  fixed;
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+	color: black;
 }
 
-#work-cap {
-  opacity: 0;
+#circle-1 {
+	animation: blinker 2s step-start infinite;
 }
 
-#contact-cap {
-  opacity: 0;
+@keyframes blinker {
+  50% {
+  	background-color: #00ff00;
+  }
 }
 
-#sp-ind {
-  opacity: 0.3;
-}
-
-#work-ind {
-  opacity: 0.3;
-}
-
-#contact-ind {
-  opacity: 0.3;
-}
-
-/* animation triggers */
-.trigger-offset {
-  height: 55vh;
-}
-
-.trigger {
-  height: 20vh;
-}
-
-/* small mobile styles */
+/* small mobile styles: under 375 */
 @media only screen and (max-width: 375px) {
-	#name {
-		bottom:  16px;
-		left:  16px;
+	#circles {
+		bottom:  24px;
+		right:  16px;
 	}
 
+	#circle
+
 	#content {
-		font-size: 1.625rem;
-		top:  16px;
+		font-size: 1.3125rem;
+		top:  24px;
 		left:  16px;
 		right: 16px;
 		width: auto;
 	}
-
-  .indicators {
-    display: grid;
-    grid-template-columns: 6.4375rem 1rem;
-    grid-template-rows: 1rem 1rem 1rem 1rem;
-    grid-gap: 0.75rem .5rem;
-    justify-content: center;
-    align-content: center;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-  }
 }
 
-/* mobile styles */
+/* mobile styles: 375-560 */
 @media only screen and (min-width: 375px) {
-	#name {
-		bottom:  16px;
-		left:  16px;
+	#circles {
+		bottom:  24px;
+		right:  16px;
+	}
+
+	#circle-1 {
+		margin-bottom: 72px;
 	}
 
 	#content {
-		font-size: 1.625rem;
-		top:  16px;
+		font-size: 1.3125rem;
+		top:  24px;
 		left:  16px;
-		width: 339px;
+		width: 311px;
 	}
-
-  .indicators {
-    display: grid;
-    grid-template-columns: 6.4375rem 1rem;
-    grid-template-rows: 1rem 1rem 1rem 1rem;
-    grid-gap: 0.75rem .5rem;
-    justify-content: center;
-    align-content: center;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-  }
 }
 
-/*small tablet styles */
+/*small tablet styles: 560-768 */
 @media only screen and (min-width: 560px) {
-	#name {
-		bottom:  32px;
-		left:  32px;
+	#circles {
+		bottom:  64px;
+		right:  24px;
+	}
+
+	#circle-1 {
+		margin-bottom: 72px;
+	}
+
+
+	#content {
+		font-size: 1.625rem;
+		top:  24px;
+		left:  16px;
+		width: 447px;
+	}
+}
+
+/*large tablet styles: 768-960 */
+@media only screen and (min-width: 768px) {
+	#circles {
+		bottom:  64px;
+		right:  24px;
+	}
+
+	#circle-1 {
+		margin-bottom: 176px;
+	}
+
+
+	#content {
+		font-size: 1.625rem;
+		top:  24px;
+		left:  16px;
+		width: 447px;
+	}
+}
+
+/* desktop styles: 960+ */
+@media only screen and (min-width: 960px) {
+	#circles {
+		bottom:  64px;
+		right:  24px;
+	}
+
+	#circle-1 {
+		margin-bottom: 214px;
 	}
 
 	#content {
 		font-size: 1.625rem;
-		top:  32px;
-		left:  32px;
-		width: 383px;
+		top:  24px;
+		left:  16px;
+		width: 447px;
 	}
-
-  .indicators {
-    display: grid;
-    grid-template-columns: 6.4375rem 1rem;
-    grid-template-rows: 1rem 1rem 1rem 1rem;
-    grid-gap: 0.75rem .5rem;
-    justify-content: center;
-    align-content: center;
-    position: fixed;
-    bottom:  32px;
-    right: 32px;
-  }
-}
-
-/*tablet and desktop styles */
-@media only screen and (min-width: 768px) {
-	#name {
-		bottom:  32px;
-		left:  32px;
-	}
-
-	#content {
-		font-size: 2.625rem;
-		top:  32px;
-		left:  32px;
-		width: 591px;
-	}
-
-  .indicators {
-    display: grid;
-    grid-template-columns: 6.4375rem 1rem;
-    grid-template-rows: 1rem 1rem 1rem 1rem;
-    grid-gap: 0.75rem .5rem;
-    justify-content: center;
-    align-content: center;
-    position: fixed;
-    bottom:  32px;
-    right: 32px;
-  }
-}
-
-/* large desktop styles */
-@media only screen and (min-width: 1440px) {
-	#name {
-		bottom:  32px;
-		left:  32px;
-	}
-
-	#content {
-		font-size: 3.4375rem;
-		top:  32px;
-		left:  32px;
-		width: 774px;
-	}
-
-  .indicators {
-    display: grid;
-    grid-template-columns: 6.4375rem 1rem;
-    grid-template-rows: 1rem 1rem 1rem 1rem;
-    grid-gap: 0.75rem .5rem;
-    justify-content: center;
-    align-content: center;
-    position: fixed;
-    bottom:  32px;
-    right: 32px;
-  }
 }
