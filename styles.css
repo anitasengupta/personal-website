@@ -1,6 +1,8 @@
 @font-face {
-  font-family: "TimesDot";
-  src: url("fonts/timesdotrom-webfont.ttf") format("ttf");
+  font-family: TimesDotRom;
+  font-style: normal;
+  src: url('fonts/TimesDotRom.otf');
+  text-rendering: optimizeLegibility;
 }
 
 html {
@@ -31,7 +33,7 @@ a:focus {
 	position: fixed;
 	margin-block-start: 0em;
 	margin-block-end: 0em;
-	font-family: TimesDot, serif;
+	font-family: TimesDotRom, serif;
 	color: black;
 	line-height: 1.1;
   /* height: 1.1rem; */
