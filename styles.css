@@ -22,12 +22,12 @@ p {
 }
 
 a {
-  color: #00ff00;
+  color: #000000;
 }
 
 a:hover,
 a:focus {
-  color: #000000;
+  color: #00ff00;
 }
 
 #content {
