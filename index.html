@@ -26,6 +26,7 @@
 
 	</head>
 	<body>
+		<div id="bg-placeholder"></div>
 		<video autoplay muted loop playsinline id="bg-video" poster="sky-poster.webp">
   			<source src="sky.mp4" type="video/mp4">
 		</video>
@@ -34,5 +35,13 @@
 			<p>Anita Sengupta is a designer, artist, and writer based in Berlin.</p>
 			<p id="contact"><a href="mailto:anita.m.sengupta@gmail.com">email</a> / <a href="https://anita-sengupta.com/portfolio" target="_blank">portfolio</a> / <a href="https://www.instagram.com/_thelaundromat/" target="_blank">instagram</a></p>
 		</div>
+		<script>
+  			const video = document.getElementById('bg-video');
+ 			const overlay = document.getElementById('bg-overlay');
+  			video.addEventListener('canplay', () => {
+   			video.classList.add('loaded');
+    		overlay.classList.add('loaded');
+  			});
+		</script>
 	</body>
 </html>
