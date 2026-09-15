@@ -27,7 +27,7 @@
 	</head>
 	<body>
 		<div id="bg-placeholder"></div>
-		<video autoplay muted loop playsinline id="bg-video" poster="sky-poster.webp">
+		<video autoplay muted loop playsinline id="bg-video">
   			<source src="sky.mp4" type="video/mp4">
 		</video>
 		<div id="bg-overlay"></div>
@@ -38,7 +38,7 @@
 		<script>
   			const video = document.getElementById('bg-video');
  			const overlay = document.getElementById('bg-overlay');
-  			video.addEventListener('canplay', () => {
+  			video.addEventListener('playing', () => {
    			video.classList.add('loaded');
     		overlay.classList.add('loaded');
   			});
