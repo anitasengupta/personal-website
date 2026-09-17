@@ -28,7 +28,7 @@
 	<body>
 		<div id="bg-placeholder"></div>
 		<video autoplay muted loop playsinline id="bg-video">
-  			<source src="sky.mp4" type="video/mp4">
+  			<source src="sky-pixelated-20.mp4" type="video/mp4">
 		</video>
 		<div id="bg-overlay"></div>
 		<div id="content">
@@ -146,6 +146,7 @@
   				aboutModal.classList.add('open');
   				aboutModal.setAttribute('aria-hidden', 'false');
   				aboutBtn.setAttribute('aria-expanded', 'true');
+  				document.body.classList.add('modal-open');
   				document.body.style.overflow = 'hidden';
   				aboutModal.focus();
   				document.addEventListener('keydown', onKeydown);
@@ -155,6 +156,7 @@
   				aboutModal.classList.remove('open');
   				aboutModal.setAttribute('aria-hidden', 'true');
   				aboutBtn.setAttribute('aria-expanded', 'false');
+  				document.body.classList.remove('modal-open');
   				document.body.style.overflow = '';
   				aboutBtn.focus();
   				document.removeEventListener('keydown', onKeydown);
