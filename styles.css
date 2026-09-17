@@ -78,68 +78,179 @@ a:focus {
 
 #content {
 	position: fixed;
+	display: flex;
 	margin-block-start: 0em;
 	margin-block-end: 0em;
 	font-family: TimesDotRom, serif;
 	color: rgba(255, 255, 255, 1.0);
 	line-height: 1.1;
-	z-index: auto;
 }
 
-/* small mobile styles: under 375 */
-@media only screen and (max-width: 375px) {
-	#content {
-		font-size: 2.125rem;
-		text-align: center;
-		margin-top:  33%;
-		margin-left: 32px;
-		margin-right: 32px;
-	}
+#bio {
+	margin: 0;
+	padding: 0;
 }
 
-/* mobile styles: 375-560 */
-@media only screen and (min-width: 375px) {
+#about-btn {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 18px;
+	background: none;
+	border: none;
+	color: rgba(255, 255, 255, 1.0);
+	padding: 0;
+	cursor: pointer;
+}
+
+#about-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 100;
+	display: flex;
+	flex-direction: column;
+	background: #FF880A;
+	color: rgba(255, 255, 255, 1.0);
+	font-family: TimesDotRom, serif;
+	line-height: 1.1;
+	overflow-y: auto;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s ease-out, visibility 0s linear 0.3s;
+}
+
+#about-modal.open {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 0.3s ease-out;
+}
+
+#about-modal-close-row {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.about-modal-close {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 18px;
+	background: none;
+	border: none;
+	color: rgba(255, 255, 255, 1.0);
+	padding: 0;
+	cursor: pointer;
+}
+
+.about-modal-close--inline {
+	display: none;
+	align-self: center;
+}
+
+#about-modal-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.about-p {
+	font-size: 2.125rem;
+	margin: 0;
+	padding: 0;
+}
+
+.about-p em {
+	font-style: italic;
+}
+
+.about-link-block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+.about-label {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+}
+
+.about-link {
+	font-size: 2.125rem;
+	overflow-wrap: anywhere;
+}
+
+/* mobile & small tablet styles: under 768 (about sits centered below bio, so close stays centered too) */
+@media only screen and (max-width: 767px) {
 	#content {
+		flex-direction: column;
+		align-items: center;
+		gap: 24px;
 		font-size: 2.125rem;
 		text-align: center;
 		margin-top: 33%;
 		margin-left: 32px;
 		margin-right: 32px;
 	}
-}
-
-/*small tablet styles: 560-768 */
-@media only screen and (min-width: 560px) {
-	#content {
-		font-size: 2.125rem;
-		text-align: left;
-		margin-top:  48px;
-		margin-left:  48px;
-		margin-right: 0px;
-		width: 447px;
+	#about-modal {
+		padding: 80px 24px 28px;
+		gap: 120px;
+	}
+	#about-modal-close-row {
+		display: none;
+	}
+	.about-modal-close--inline {
+		display: block;
+	}
+	#about-modal-content {
+		gap: 48px;
 	}
 }
 
-/*large tablet styles: 768-960 */
+/* large tablet styles: 768-960 (about sits top-right; close matches its exact position via the same 64px insets) */
 @media only screen and (min-width: 768px) {
 	#content {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		left: 0;
+		right: 0;
 		font-size: 2.125rem;
 		text-align: left;
 		margin-top:  64px;
 		margin-left:  64px;
-		margin-right: 0px;
+		margin-right: 64px;
+	}
+	#bio {
 		width: 447px;
+	}
+	#about-modal {
+		padding: 64px;
+		gap: 111px;
+	}
+	#about-modal-content {
+		gap: 48px;
 	}
 }
 
 /* desktop styles: 960+ */
 @media only screen and (min-width: 960px) {
 	#content {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		left: 0;
+		right: 0;
 		font-size: 2.125rem;
 		text-align: left;
 		margin-top:  64px;
 		margin-left:  64px;
-		margin-right: 0px;
+		margin-right: 64px;
+	}
+	#bio {
 		width: 457px;
+	}
+	#about-modal-content {
+		max-width: 1000px;
+		margin: 0 auto;
 	}
 }
