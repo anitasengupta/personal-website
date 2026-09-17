@@ -91,6 +91,25 @@ a:focus {
 	padding: 0;
 }
 
+#footer {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 32px;
+}
+
+#footer-text {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 18px;
+	color: rgba(255, 255, 255, 1.0);
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
 #about-btn {
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 18px;
@@ -223,6 +242,9 @@ a:focus {
 	#bio {
 		width: 447px;
 	}
+	#footer {
+		padding-bottom: 48px;
+	}
 	#about-modal {
 		padding: 64px;
 		gap: 111px;
@@ -248,6 +270,9 @@ a:focus {
 	}
 	#bio {
 		width: 457px;
+	}
+	#footer {
+		padding-bottom: 64px;
 	}
 	#about-modal-content {
 		max-width: 1000px;

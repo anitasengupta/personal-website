@@ -56,7 +56,20 @@
 			</div>
 		</div>
 
+		<footer id="footer">
+			<p id="footer-text"></p>
+		</footer>
+
 		<script>
+  			const fortunes = [
+  				'let the light shine',
+  				'om shanti shanti shanti om',
+  				'imagine 1000 suns in the sky',
+  				'let the unknown rest',
+  			];
+  			const footerText = document.getElementById('footer-text');
+  			footerText.textContent = fortunes[Math.floor(Math.random() * fortunes.length)];
+
   			const video = document.getElementById('bg-video');
  			const overlay = document.getElementById('bg-overlay');
   			video.addEventListener('playing', () => {
