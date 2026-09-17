@@ -22,11 +22,17 @@ p {
 }
 
 a {
-  color: rgba(255, 255, 255, 1.0);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+a:visited {
+  color: rgba(255, 255, 255, 0.85);
 }
 
 a:hover,
-a:focus {
+a:focus,
+a:visited:hover,
+a:visited:focus {
   color: rgba(255, 255, 255, 1.0);
 }
 
@@ -82,7 +88,7 @@ a:focus {
 	margin-block-start: 0em;
 	margin-block-end: 0em;
 	font-family: TimesDotRom, serif;
-	color: rgba(255, 255, 255, 1.0);
+	color: rgba(255, 255, 255, 0.85);
 	line-height: 1.1;
 }
 
@@ -104,7 +110,7 @@ a:focus {
 #footer-text {
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 18px;
-	color: rgba(255, 255, 255, 1.0);
+	color: rgba(255, 255, 255, 0.85);
 	text-align: center;
 	margin: 0;
 	padding: 0;
@@ -115,9 +121,14 @@ a:focus {
 	font-size: 18px;
 	background: none;
 	border: none;
-	color: rgba(255, 255, 255, 1.0);
+	color: rgba(255, 255, 255, 0.85);
 	padding: 0;
 	cursor: pointer;
+}
+
+#about-btn:hover,
+#about-btn:focus {
+	color: rgba(255, 255, 255, 1.0);
 }
 
 #about-modal {
@@ -126,8 +137,8 @@ a:focus {
 	z-index: 100;
 	display: flex;
 	flex-direction: column;
-	background: #FF880A;
-	color: rgba(255, 255, 255, 1.0);
+	background: #DA340B;
+	color: rgba(255, 255, 255, 0.85);
 	font-family: TimesDotRom, serif;
 	line-height: 1.1;
 	overflow-y: auto;
@@ -152,9 +163,14 @@ a:focus {
 	font-size: 18px;
 	background: none;
 	border: none;
-	color: rgba(255, 255, 255, 1.0);
+	color: rgba(255, 255, 255, 0.85);
 	padding: 0;
 	cursor: pointer;
+}
+
+.about-modal-close:hover,
+.about-modal-close:focus {
+	color: rgba(255, 255, 255, 1.0);
 }
 
 .about-modal-close--inline {
