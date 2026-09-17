@@ -61,6 +61,65 @@
 		</footer>
 
 		<script>
+  			function scrambleText(el, finalText, options = {}) {
+  				const {
+  					duration = 1000,
+  					frameRate = 40,
+  					chars = 'abcdefghijklmnopqrstuvwxyz',
+  					staggerRatio = 1,
+  					revealOrder = 'sequential',
+  				} = options;
+
+  				const length = finalText.length;
+  				const totalFrames = Math.ceil(duration / frameRate);
+  				const lockStartFrame = Math.floor(totalFrames * (1 - staggerRatio));
+
+  				const order = Array.from({ length }, (_, i) => i);
+  				if (revealOrder === 'random') {
+  					for (let i = order.length - 1; i > 0; i--) {
+  						const j = Math.floor(Math.random() * (i + 1));
+  						[order[i], order[j]] = [order[j], order[i]];
+  					}
+  				}
+
+  				const lockFrames = new Array(length);
+  				order.forEach((charIndex, rank) => {
+  					lockFrames[charIndex] =
+  						length === 1
+  							? totalFrames
+  							: Math.round(
+  									lockStartFrame + (rank / (length - 1)) * (totalFrames - lockStartFrame)
+  							  );
+  				});
+
+  				let frame = 0;
+
+  				function randomChar() {
+  					return chars[Math.floor(Math.random() * chars.length)];
+  				}
+
+  				const interval = setInterval(() => {
+  					frame++;
+  					let output = '';
+  					for (let i = 0; i < length; i++) {
+  						const targetChar = finalText[i];
+  						if (targetChar === ' ') {
+  							output += ' ';
+  						} else if (frame >= lockFrames[i]) {
+  							output += targetChar;
+  						} else {
+  							output += randomChar();
+  						}
+  					}
+  					el.textContent = output;
+
+  					if (frame >= totalFrames) {
+  						el.textContent = finalText;
+  						clearInterval(interval);
+  					}
+  				}, frameRate);
+  			}
+
   			const fortunes = [
   				'let the light shine',
   				'om shanti shanti shanti om',
@@ -68,7 +127,9 @@
   				'let the unknown rest',
   			];
   			const footerText = document.getElementById('footer-text');
-  			footerText.textContent = fortunes[Math.floor(Math.random() * fortunes.length)];
+  			const chosenFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+  			footerText.textContent = chosenFortune.replace(/\S/g, '•');
+  			scrambleText(footerText, chosenFortune, { revealOrder: 'random' });
 
   			const video = document.getElementById('bg-video');
  			const overlay = document.getElementById('bg-overlay');
