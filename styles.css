@@ -42,9 +42,10 @@ a:visited:focus {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('sky-20-pixelated-trimmed-poster.png');
+  background-image: url('sky-20-pixelated-trimmed-poster-tiny.png');
   background-size: cover;
   background-position: center;
+  filter: blur(20px);
   transform: scale(1.1);
   z-index: -3;
 }
