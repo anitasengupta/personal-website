@@ -28,7 +28,7 @@
 	<body>
 		<div id="bg-placeholder"></div>
 		<video autoplay muted loop playsinline id="bg-video">
-  			<source src="sky-pixelated-20.mp4" type="video/mp4">
+  			<source src="sky-pixelated-20-trimmed.mp4" type="video/mp4">
 		</video>
 		<div id="bg-overlay"></div>
 		<div id="content">
@@ -129,13 +129,13 @@
   			const footerText = document.getElementById('footer-text');
   			const chosenFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
   			footerText.textContent = chosenFortune.replace(/\S/g, '•');
-  			scrambleText(footerText, chosenFortune, { revealOrder: 'random' });
 
   			const video = document.getElementById('bg-video');
  			const overlay = document.getElementById('bg-overlay');
   			video.addEventListener('playing', () => {
    			video.classList.add('loaded');
     		overlay.classList.add('loaded');
+    		scrambleText(footerText, chosenFortune, { revealOrder: 'random' });
   			});
 
   			const aboutBtn = document.getElementById('about-btn');
