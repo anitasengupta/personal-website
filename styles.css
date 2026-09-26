@@ -1,9 +1,17 @@
 @font-face {
   font-family: TimesDotRom;
-  /* src: url("fonts/timesdotrom-webfont.ttf") format("ttf"); */
-  /* font-style: normal; */
   src: url('fonts/TimesDotRom.otf');
-  /* text-rendering: optimizeLegibility; */
+}
+
+:root {
+  --color-text: rgba(255, 255, 255, 0.85);
+  --color-text-hover: rgba(255, 255, 255, 1.0);
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-modal-bg: rgba(229, 45, 0, 0.9);
+  --font-mono: 'Courier New', Courier, monospace;
+  --font-serif: TimesDotRom, serif;
+  --font-size-mono: 18px;
+  --font-size-large: 2.125rem;
 }
 
 html {
@@ -22,18 +30,18 @@ p {
 }
 
 a {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text);
 }
 
 a:visited {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text);
 }
 
 a:hover,
 a:focus,
 a:visited:hover,
 a:visited:focus {
-  color: rgba(255, 255, 255, 1.0);
+  color: var(--color-text-hover);
 }
 
 #bg-placeholder {
@@ -72,7 +80,7 @@ a:visited:focus {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--color-overlay);
   z-index: -1;
 }
 
@@ -81,8 +89,8 @@ a:visited:focus {
 	display: flex;
 	margin-block-start: 0em;
 	margin-block-end: 0em;
-	font-family: TimesDotRom, serif;
-	color: rgba(255, 255, 255, 0.85);
+	font-family: var(--font-serif);
+	color: var(--color-text);
 	line-height: 1.1;
 }
 
@@ -102,9 +110,9 @@ a:visited:focus {
 }
 
 #footer-text {
-	font-family: 'Courier New', Courier, monospace;
-	font-size: 18px;
-	color: rgba(255, 255, 255, 0.85);
+	font-family: var(--font-mono);
+	font-size: var(--font-size-mono);
+	color: var(--color-text);
 	text-align: center;
 	margin: 0;
 	padding: 0;
@@ -121,18 +129,18 @@ body.modal-open #footer-text {
 }
 
 #about-btn {
-	font-family: 'Courier New', Courier, monospace;
-	font-size: 18px;
+	font-family: var(--font-mono);
+	font-size: var(--font-size-mono);
 	background: none;
 	border: none;
-	color: rgba(255, 255, 255, 0.85);
+	color: var(--color-text);
 	padding: 0;
 	cursor: pointer;
 }
 
 #about-btn:hover,
 #about-btn:focus {
-	color: rgba(255, 255, 255, 1.0);
+	color: var(--color-text-hover);
 }
 
 #about-modal {
@@ -141,9 +149,9 @@ body.modal-open #footer-text {
 	z-index: 100;
 	display: flex;
 	flex-direction: column;
-	background: rgba(229, 45, 0, 0.9);
-	color: rgba(255, 255, 255, 0.85);
-	font-family: TimesDotRom, serif;
+	background: var(--color-modal-bg);
+	color: var(--color-text);
+	font-family: var(--font-serif);
 	line-height: 1.1;
 	overflow-y: auto;
 	visibility: hidden;
@@ -163,8 +171,8 @@ body.modal-open #footer-text {
 }
 
 .about-modal-close {
-	font-family: 'Courier New', Courier, monospace;
-	font-size: 18px;
+	font-family: var(--font-mono);
+	font-size: var(--font-size-mono);
 	background: none;
 	border: none;
 	color: rgba(255, 255, 255, 0.9);
@@ -174,7 +182,7 @@ body.modal-open #footer-text {
 
 .about-modal-close:hover,
 .about-modal-close:focus {
-	color: rgba(255, 255, 255, 1.0);
+	color: var(--color-text-hover);
 }
 
 .about-modal-close--inline {
@@ -190,7 +198,7 @@ body.modal-open #footer-text {
 }
 
 .about-p {
-	font-size: 2.125rem;
+	font-size: var(--font-size-large);
 	margin: 0;
 	padding: 0;
 }
@@ -207,14 +215,14 @@ body.modal-open #footer-text {
 }
 
 .about-label {
-	font-family: 'Courier New', Courier, monospace;
-	font-size: 18px;
+	font-family: var(--font-mono);
+	font-size: var(--font-size-mono);
 	margin: 0;
 	padding: 0;
 }
 
 .about-link {
-	font-size: 2.125rem;
+	font-size: var(--font-size-large);
 	overflow-wrap: anywhere;
 }
 
@@ -224,7 +232,7 @@ body.modal-open #footer-text {
 		flex-direction: column;
 		align-items: center;
 		gap: 24px;
-		font-size: 2.125rem;
+		font-size: var(--font-size-large);
 		text-align: center;
 		margin-top: 33%;
 		margin-left: 32px;
@@ -253,7 +261,7 @@ body.modal-open #footer-text {
 		align-items: flex-start;
 		left: 0;
 		right: 0;
-		font-size: 2.125rem;
+		font-size: var(--font-size-large);
 		text-align: left;
 		margin-top:  64px;
 		margin-left:  64px;
@@ -276,18 +284,6 @@ body.modal-open #footer-text {
 
 /* desktop styles: 960+ */
 @media only screen and (min-width: 960px) {
-	#content {
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: flex-start;
-		left: 0;
-		right: 0;
-		font-size: 2.125rem;
-		text-align: left;
-		margin-top:  64px;
-		margin-left:  64px;
-		margin-right: 64px;
-	}
 	#bio {
 		width: 457px;
 	}
