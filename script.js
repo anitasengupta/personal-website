@@ -59,9 +59,11 @@ function scrambleText(el, finalText, options = {}) {
 
 const fortunes = [
 	'let the light shine',
-	'om shanti shanti shanti om',
-	'imagine 1000 suns in the sky',
+	'call on the wind',
+	'kiss the moon on each cheek',
+	'imagine 1000 suns',
 	'let the unknown rest',
+	'om shanti shanti shanti om',
 ];
 const footerText = document.getElementById('footer-text');
 const chosenFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
@@ -107,3 +109,42 @@ function onKeydown(event) {
 
 aboutBtn.addEventListener('click', openModal);
 aboutModalCloseBtns.forEach((btn) => btn.addEventListener('click', closeModal));
+
+const cursor = document.getElementById('cursor');
+let targetX = window.innerWidth / 2;
+let targetY = window.innerHeight / 2;
+let curX = targetX;
+let curY = targetY;
+let hasMoved = false;
+
+window.addEventListener('mousemove', (event) => {
+	targetX = event.clientX;
+	targetY = event.clientY;
+	if (!hasMoved) {
+		// snap to the pointer on first move so it doesn't glide in from the center
+		curX = targetX;
+		curY = targetY;
+		hasMoved = true;
+		cursor.classList.add('visible');
+	}
+}, { passive: true });
+
+document.addEventListener('mouseleave', () => cursor.classList.remove('visible'));
+document.addEventListener('mouseenter', () => {
+	if (hasMoved) cursor.classList.add('visible');
+});
+
+// grow over any link / button / [data-cursor-hover]
+document.addEventListener('mouseover', (event) => {
+	cursor.classList.toggle('hover', !!event.target.closest('a, button, [data-cursor-hover]'));
+});
+
+// ease toward the real pointer so it trails slightly
+function tick() {
+	const ease = 0.22;
+	curX += (targetX - curX) * ease;
+	curY += (targetY - curY) * ease;
+	cursor.style.transform = `translate3d(${curX}px, ${curY}px, 0)`;
+	requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
