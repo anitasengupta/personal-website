@@ -71,11 +71,22 @@ footerText.textContent = chosenFortune.replace(/\S/g, '•');
 
 const video = document.getElementById('bg-video');
 const overlay = document.getElementById('bg-overlay');
+let fortuneRevealed = false;
+function revealFortune() {
+	if (fortuneRevealed) return;
+	fortuneRevealed = true;
+	scrambleText(footerText, chosenFortune, { revealOrder: 'random' });
+}
+
 video.addEventListener('playing', () => {
 	video.classList.add('loaded');
 	overlay.classList.add('loaded');
-	scrambleText(footerText, chosenFortune, { revealOrder: 'random' });
+	revealFortune();
 });
+
+// if the video can't play (decode error, autoplay blocked, low power mode), still reveal the fortune
+video.querySelector('source').addEventListener('error', revealFortune);
+video.play()?.catch(revealFortune);
 
 const aboutBtn = document.getElementById('about-btn');
 const aboutModal = document.getElementById('about-modal');
